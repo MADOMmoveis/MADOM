@@ -1,12 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MADOM</title>
+
+
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/indexstyle.css">
+    <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>
+
 </head>
+
+
+
+
 <body>
-    
+
+    <header>
+        <h1><a href="index.html">MADOM MOVIES</a></h1>
+
+        <!-- UNIQUE FOR EACH PAGE -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="movies.html">Movies</a>
+                </li>
+                <li>
+                    <a href="packages.html">Packages</a>
+                </li>
+                <li>
+                    <a href="aboutus.html">About Us</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-heart fa-2x"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-shopping-cart fa-2x"></i> </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-search fa-2x"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+
+
+        <section id="heroBG">
+            <div>
+
+                <img id="heroIMG" src="https://placehold.it/1200x800/000">
+
+                <!-- AUTO RANDOM SLIDER -->
+                <!-- POPULATE IMAGES WITH JS -->
+
+                <div id="autoSlide">
+
+                    <img id="rightThird" src="https://placehold.it/200x270/000">
+
+                    <img id="rightSecond" src="https://placehold.it/200x270/000">
+
+                    <img id="rightFirst" src="https://placehold.it/200x270/000">
+
+                    <img id="middleImg" src="https://placehold.it/200x270/000">
+
+                    <img id="leftFirst" src="https://placehold.it/200x270/000">
+
+                    <img id="leftSecond" src="https://placehold.it/200x270/000">
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="topRated">
+            <div id="ratedTitle">
+                <h2>Top Rated Movies</h2>
+                <h4>Most Rated Movies</h4>
+                <p>⭐︁⭐︁⭐︁⭐︁⭐︁</p>
+
+            </div>
+
+            <div id="manualSlider">
+
+
+                <button id="carouselBtnLeft">〈︁</button>
+
+                <div class="carouselImgDiv">
+                    <button class="fav">♥︁</button>
+                    <img class="carouselImg" src="https://placehold.it/250x350/000">
+                </div>
+
+                <button id="carouselBtnRight">〉︁</button>
+
+
+
+            </div>
+
+
+        </section>
+
+
+        <section id="categories">
+
+            <div id="topCategory">
+                <h5><span>TEXT</span></h5>
+                <hr>
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+
+
+            </div>
+
+            <div id="middleCategory">
+                <h5><span>TEXT</span></h5>
+                <hr>
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+
+
+            </div>
+
+            <div id="bottomCategory">
+                <h5><span>TEXT</span></h5>
+                <hr>
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+                <img class="carouselImg" src="https://placehold.it/230x300/000">
+
+
+            </div>
+
+        </section>
+
+        <div>
+            <button id="viewAll"><a href="movies.html">View All</a></button>
+            <hr>
+        </div>
+
+    </main>
+
+
+
+    <footer>
+
+
+        <!-- UNIQUE FOR EACH PAGE -->
+
+        <div>
+            <ul>
+                <li>
+                    <a href="movies.html">Movies</a>
+                </li>
+                <li>
+                    <a href="packages.html">Packages</a>
+                </li>
+                <li>
+                    <a href="aboutus.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="paymentMethods">
+            <i class="fab fa-amazon-pay fa-3x"></i>
+            <i class="fas fa-cart-plus fa-3x"></i>
+            <i class="fab fa-cc-visa fa-3x"></i>
+            <i class="fab fa-cc-mastercard fa-3x"></i>
+            <i class="fab fa-amazon-pay fa-3x"></i>
+            <i class="fab fa-cc-amex fa-3x"></i>
+        </div>
+
+        <div id="socialMedia">
+            <a href="https://citra-emu.org/"><i class="fab fa-facebook fa-3x"></i></a>
+            <i class="fab fa-twitter-square fa-3x"></i>
+            <i class="fab fa-instagram fa-3x"></i>
+        </div>
+    </footer>
+
+
+
+
 </body>
+
 </html>
