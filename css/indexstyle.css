@@ -890,7 +890,7 @@ button.swiper-pagination-bullet {
   h6{
       color: #fff;
       font-size: 120%;
-      
+
   }
     #socialMedia{
         text-align:right; 
@@ -902,3 +902,10 @@ button.swiper-pagination-bullet {
     
     #categories{
         margin-top:30px;
+    }
+
+    .logoimg{
+        padding-top: 2%;
+        height: 20%;
+    }
+  
