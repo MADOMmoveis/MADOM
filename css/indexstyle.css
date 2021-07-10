@@ -17,6 +17,10 @@ body{
     line-height:35px;
 }
 
+.navlistitem a:hover{
+    color: var(--main);
+}
+
 .navlistitem a{
     display: inline-block;
     text-align: center;
@@ -33,6 +37,11 @@ body{
 
 .right a{
     padding: 14px 5px!important;
+}
+
+.icon:hover{
+    background: var(--main);
+    color: #fff;
 }
 .logo a {
     vertical-align: middle;
