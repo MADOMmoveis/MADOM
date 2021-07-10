@@ -753,3 +753,152 @@ button.swiper-pagination-bullet {
 }
 /*end swiper */
 
+#actionCategory h5 span {
+   border-radius: 2%;
+   color: #fff;
+   background-color: #d50055;
+   border: 2px solid #d50055;
+   padding: 3px;
+   border-radius: 25px;
+}
+#comedyCategory h5 span {
+    border-radius: 2%;
+   color: #fff;
+   background-color: #d50055;
+   border: 2px solid #d50055;
+   padding: 3px;
+   border-radius: 25px;
+   }
+#comedyCategory , #dramaCategory {
+    padding-top: 1%;
+}
+
+    
+
+#dramaCategory h5 span{
+    border-radius: 2%;
+   color: #fff;
+   background-color: #d50055;
+   border: 2px solid #d50055;
+   padding: 3px;
+   border-radius: 25px;
+}
+
+
+#actionfilm{
+    background-color:#ee0f6f;
+    color:#fff;
+    padding: 2px;
+    margin-top:20px;
+    margin-right:20px;
+    margin-bottom:20px;
+    margin-left:10px;
+    }
+    
+    #dramafilm{
+    background-color:#ee0f6f;
+    color:#fff;
+    margin-top:20px;
+    margin-right:20px;
+    margin-bottom:20px;
+    margin-left:10px;
+    padding: 2px;
+    }
+    
+    #comedyfilm{
+    background-color:#ee0f6f;
+    color:#fff;
+    margin-top:20px;
+    margin-right:20px;
+    margin-bottom:20px;
+    margin-left:10px;
+    padding: 2px;
+    }
+    
+    .carouselImg{
+    margin:9.5px;
+    }
+    
+    
+    #buttonVa{
+    
+        display:inline;
+        
+    }
+    
+    #viewAll{
+        transition-duration: 0.4s;
+        border: none;
+        padding: 12px 24px;
+        margin-top: 14px;
+        font-size: 18px;
+        text-align:center;
+        text-decoration: none;
+        cursor: pointer;
+        width: 7%;
+        margin-left: 45%;
+        border-radius: 2%;
+        background-color: #d50055;
+        border: 2px solid #d50055;
+        padding: 4px;
+        border-radius: 25px;
+        
+         
+    }
+    #viewAll a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    #viewAll:hover{
+        background-color: #fff;
+        color: #d50055
+    
+    }
+    
+    #bottomoverline hr{
+        display: flex;
+        align-items: center;
+        margin-top: 0%;
+        
+    }
+    
+    footer div ul{
+        text-align:left;
+    }
+    
+    
+    footer div ul li{
+        
+        margin: 30px;px;
+    
+    }
+    
+    footer div ul li a{
+        text-decoration:none;
+        font: size 20px;
+        color:grey;
+        
+    }
+    
+    #paymentMethods{
+        text-align:right;
+        margin-right:40px;
+        color: grey;
+        margin-top:-147px;;
+    }
+  h6{
+      color: #fff;
+      font-size: 120%;
+      
+  }
+    #socialMedia{
+        text-align:right; 
+        color: grey;
+        margin-top:20px;
+        margin-bottom:25px;
+        margin-right:148px;
+    }
+    
+    #categories{
+        margin-top:30px;
