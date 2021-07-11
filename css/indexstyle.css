@@ -759,7 +759,7 @@ button.swiper-pagination-bullet {
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
-   border-radius: 25px;
+   border-radius: 5px;
 }
 #comedyCategory h5 span {
     border-radius: 2%;
@@ -767,7 +767,7 @@ button.swiper-pagination-bullet {
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
-   border-radius: 25px;
+   border-radius: 5px;
    }
 #comedyCategory , #dramaCategory {
     padding-top: 1%;
@@ -781,7 +781,7 @@ button.swiper-pagination-bullet {
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
-   border-radius: 25px;
+   border-radius: 5px;
 }
 
 
@@ -841,7 +841,7 @@ button.swiper-pagination-bullet {
         background-color: #d50055;
         border: 2px solid #d50055;
         padding: 4px;
-        border-radius: 25px;
+        border-radius: 5px;
         
          
     }
@@ -859,10 +859,16 @@ button.swiper-pagination-bullet {
     #bottomoverline hr{
         display: flex;
         align-items: center;
-        margin-top: 0%;
-        
+        margin-top: 0%;  
     }
-    
+    #bottomoverline button{
+    z-index: 1;
+    margin-top: -15px;
+    position: absolute;
+    }
+    #bottomoverline{
+        padding-top: 2%;
+    }
     footer div ul{
         text-align:left;
     }
@@ -870,7 +876,7 @@ button.swiper-pagination-bullet {
     
     footer div ul li{
         
-        margin: 30px;px;
+        margin: 30px;
     
     }
     
@@ -885,7 +891,7 @@ button.swiper-pagination-bullet {
         text-align:right;
         margin-right:40px;
         color: grey;
-        margin-top:-147px;;
+        margin-top:-137px;;
     }
   h6{
       color: #fff;
@@ -895,9 +901,9 @@ button.swiper-pagination-bullet {
     #socialMedia{
         text-align:right; 
         color: grey;
-        margin-top:20px;
+        margin-top:13px;
         margin-bottom:25px;
-        margin-right:148px;
+        margin-right:109px;
     }
     
     #categories{
@@ -908,4 +914,17 @@ button.swiper-pagination-bullet {
         padding-top: 2%;
         height: 20%;
     }
-  
+   
+    #copy img{
+        display: flex;
+        float: left;
+        margin-left: 15%;
+        margin-top: -113px;
+        }
+        
+    
+
+    /* #bottomoverline button{
+        position: absolute;
+    } */
+
