@@ -355,8 +355,10 @@ function addToCart(event){
 
   let specificSelect = selectedMovie.className.split(' ')[1];
   console.log(specificSelect);
-  cart.addMovie(specificSelect);
+  cart.allMovies.push(specificSelect);
   cart.saveCart();
+  console.log(cart);
+
 }
 
 console.log(cart);
