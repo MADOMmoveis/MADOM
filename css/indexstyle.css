@@ -913,6 +913,7 @@ button.swiper-pagination-bullet {
    }
 #comedyCategory , #dramaCategory {
     padding-top: 1%;
+    margin-top: 2%;
 }
 
     
@@ -1003,7 +1004,7 @@ button.swiper-pagination-bullet {
     }
     #bottomoverline button{
     z-index: 1;
-    margin-top: -15px;
+    margin-top: 10px;
     }
     #bottomoverline{
         padding-top: 2%;
@@ -1041,7 +1042,7 @@ button.swiper-pagination-bullet {
         text-align:right; 
         color: grey;
         margin-top:13px;
-        margin-bottom:25px;
+        margin-bottom:33px;
         margin-right:109px;
     }
     
