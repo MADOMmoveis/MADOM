@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart</title>
 
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/cartstyle.css">
+    <link rel="stylesheet" href="css/indexstyle.css">
     <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>
 
 </head>
@@ -18,84 +18,98 @@
 
 
 <body>
-
     <header>
-        <h1><a href="index.html">MADOM MOVIES</a></h1>
 
         <!-- UNIQUE FOR EACH PAGE -->
-        <nav>
-            <ul>
-                <li>
-                    <a href="movies.html">Movies</a>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="logo">
+                    <a href="index.html"><img class="logoimg" src="img/logo_MADOM.png"></a>
                 </li>
-                <li>
-                    <a href="packages.html">Packages</a>
+                <span class="navmid ">
+                    <li class="navlistitem">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="navlistitem">
+                        <a href="movies.html">Movies</a>
+                    </li>
+                    <li class="navlistitem">
+                        <a href="packages.html">Packages</a>
+                    </li>
+                    <li class="navlistitem">
+                        <a href="aboutus.html">About Us</a>
+                    </li>
+                </span>
+                <li class="navlistitem right">
+                    <a href="#"><i class="fas fa-heart icon"></i></a>
                 </li>
-                <li>
-                    <a href="aboutus.html">About Us</a>
+                <li class="navlistitem right">
+                    <a href=""><i class="fas fa-shopping-cart icon"></i> </a>
                 </li>
-                <li>
-                    <a href="#"><i class="fas fa-heart fa-2x"></i></a>
-                </li>
-                <li>
-
-                    <i class="fas fa-shopping-cart fa-2x"></i>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-search fa-2x"></i></a>
+                <li class="navlistitem right">
+                    <a href="#"><i class="fas fa-search icon"></i></a>
                 </li>
             </ul>
         </nav>
     </header>
 
+
+
     <main>
-
-        <section id="formSection">
-            <form id="checkout">
-                <fieldset>
-                    <legend>Checkout</legend>
-                    <label for="name"> Name: </label>
-                    <input type="text" id="name" name="name" placeholder="your name">
-                    <label for="email"> E-mail: </label>
-                    <input type="text" id="email" name="email" placeholder="name@domain.com">
-                    <label for="phone"> Phone: </label>
-                    <input type="text" id="phone" name="phone" placeholder="00962 xx xxx xxx">
-                    <label for="adressA"> Main Address: </label>
-                    <input type="text" id="adressA" name="adressA" placeholder="city name">
-                    <label for="adressB"> Secondary Address: </label>
-                    <input type="text" id="adressB" name="adressB" placeholder="street name">
-                    <label for="postal"> Postal Code: </label>
-                    <input type="text" id="postal" name="postal" placeholder="00000">
-                    <input type="submit" id="checkoutBtn" value="Checkout">
-                </fieldset>
-
-            </form>
-
-        </section>
-
 
         <section id="checkoutTable">
             <table id="cartPreview">
                 <thead>
                     <tr>
-                        <td>
 
-                        </td>
-                        <td>
-                        <th> Product</th>
-                        </td>
-                        <td>
-                        <th> Quantity</th>
-                        </td>
-                        <td>
+                        <th>ID</th>
+
+                        <th>Image</th>
+
+                        <th> Movie Name</th>
+
                         <th> Price</th>
-                        </td>
+
                     </tr>
+
 
                 </thead>
 
                 <tbody>
+                    <tr>
 
+
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <img src="img/herobg.jpg" alt="herobg" width="250px" height="250px">
+                        </td>
+                        <td>
+                            heroBG
+                        </td>
+                        <td>
+                            20$
+                        </td>
+
+                    </tr>
+                    <tr>
+
+
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <img src="img/herobg.jpg" alt="herobg" width="250px" height="250px">
+                        </td>
+                        <td>
+                            heroBG
+                        </td>
+                        <td>
+                            20$
+                        </td>
+
+                    </tr>
                 </tbody>
 
 
@@ -110,12 +124,59 @@
 
 
         </section>
+        <section id="formSection">
+            <div class="center container2">
+                <form action="" id="addLocation">
+                    <fieldset>
+                        <legend>Enter your new shop information</legend>
+        
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="location">Location</label>
+                            </div>
+                            <div class="col-75">
+                                <input required="required" type="text" id="location" name="location">
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="minCust">Minimum Customers</label>
+                            </div>
+                            <div class="col-75">
+                                <input required="required" type="number" id="minCust" name="minCust">
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="maxCust">Max Customers</label>
+                            </div>
+                            <div class="col-75">
+                                <input required="required" type="number" id="maxCust" name="maxCust">
+                            </div>
+        
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="avgCookies">Average Cookies</label>
+                                </div>
+                                <div class="col-75">
+                                    <input required="required" type="number" id="avgCookies" name="avgCookies"><br><br>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <input type="submit" value="Add Location">
+                            </div>
+        
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+
 
 
     </main>
-
-
-
 
 
 
@@ -139,6 +200,10 @@
                 </li>
             </ul>
         </div>
+        <div id="copy">
+            <h6>&copy;</h6>
+            <img id="imgabd" src="img/logo_MADOM.png" width="130px" height="130px" />
+        </div>
 
         <div id="paymentMethods">
             <i class="fab fa-amazon-pay fa-3x"></i>
@@ -154,7 +219,17 @@
             <i class="fab fa-twitter-square fa-3x"></i>
             <i class="fab fa-instagram fa-3x"></i>
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+        <script src="js/app.js"></script>
+
     </footer>
+
+
+
+
+
 </body>
 
 
