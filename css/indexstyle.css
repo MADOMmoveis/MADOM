@@ -876,7 +876,7 @@ button.swiper-pagination-bullet {
     
     footer div ul li{
         
-        margin: 30px;px;
+        margin: 30px;
     
     }
     
@@ -891,7 +891,7 @@ button.swiper-pagination-bullet {
         text-align:right;
         margin-right:40px;
         color: grey;
-        margin-top:-147px;;
+        margin-top:-137px;;
     }
   h6{
       color: #fff;
@@ -901,9 +901,9 @@ button.swiper-pagination-bullet {
     #socialMedia{
         text-align:right; 
         color: grey;
-        margin-top:20px;
+        margin-top:13px;
         margin-bottom:25px;
-        margin-right:148px;
+        margin-right:109px;
     }
     
     #categories{
@@ -918,9 +918,11 @@ button.swiper-pagination-bullet {
     #copy img{
         display: flex;
         float: left;
-        margin-left: 20%;
-        margin-top:  -75px;
+        margin-left: 15%;
+        margin-top: -113px;
         }
+        
+    
 
     /* #bottomoverline button{
         position: absolute;
