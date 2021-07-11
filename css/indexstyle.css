@@ -118,12 +118,16 @@ td,th{
     padding:10px;
     vertical-align: middle;
 }
+
+th{
+    background-color: #c70839;
+}
 table{
     width:80%;
     margin-left:10%;
     margin-top:25px;
     margin-bottom:25px;
-    background-color:var(--primary);
+    background-color:#8e929b;
     
 }
 
@@ -139,23 +143,26 @@ table{
     margin-top: 50px;
 }
 fieldset {
-    background-color:var(--primary);
+    background-color:#8e929b;
   }
   
   legend {
-    background-color: gray;
+    background-color: #c70839;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 95%;
+    text-align: center;
   }
   
   input {
     margin: 5px;
   }
 
-  input[type=text], select, textarea {
+  input[type=text],input[type=email],input[type=month],input[type=password], select, textarea {
     width: 90%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #c70839;
     border-radius: 4px;
     resize: vertical;
   }
@@ -163,7 +170,7 @@ fieldset {
   input[type=number], select, textarea {
     width: 90%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #c70839;
     border-radius: 4px;
     resize: vertical;
   }
@@ -173,8 +180,8 @@ fieldset {
     display: inline-block;
   }
   
-  input[type=submit] {
-    background-color: #4CAF50;
+  input[type=submit],button#submit {
+    background-color: #c70839;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -184,7 +191,7 @@ fieldset {
   }
   
   input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #92072a;
   }
 
   .col-25 {
@@ -217,9 +224,19 @@ fieldset {
   
 .container2 {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color:#8e929b;
     padding: 20px;
-  }
+}
+
+.fa-phone{
+    -webkit-transform: rotateY(-180deg);
+}
+
+#thank_you{
+    text-align: center;
+    width: 95%;
+    background: #F7F7F7;
+}
 
 
 /******************************** Setting and tools  ********************************/

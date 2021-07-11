@@ -126,48 +126,91 @@
         </section>
         <section id="formSection">
             <div class="center container2">
-                <form action="" id="addLocation">
+                <form action="" id="addLocation" >
                     <fieldset>
-                        <legend>Enter your new shop information</legend>
-        
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="location">Location</label>
-                            </div>
-                            <div class="col-75">
-                                <input required="required" type="text" id="location" name="location">
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="minCust">Minimum Customers</label>
-                            </div>
-                            <div class="col-75">
-                                <input required="required" type="number" id="minCust" name="minCust">
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="maxCust">Max Customers</label>
-                            </div>
-                            <div class="col-75">
-                                <input required="required" type="number" id="maxCust" name="maxCust">
-                            </div>
-        
+
+                        <legend><h4>Checkout</h4></legend>
+                        <span id="forminputs">
                             <div class="row">
                                 <div class="col-25">
-                                    <label for="avgCookies">Average Cookies</label>
+                                    <label for="fname"><i class="fa fa-user"></i> First Name</label>
                                 </div>
                                 <div class="col-75">
-                                    <input required="required" type="number" id="avgCookies" name="avgCookies"><br><br>
+                                <input placeholder="First Name" required="required" type="text" id="fname" name="fname">
                                 </div>
                             </div>
-        
+
                             <div class="row">
-                                <input type="submit" value="Add Location">
+                                <div class="col-25">
+                                    <label for="lname"><i class="fa fa-user"></i> Last Name</label>
+                                </div>
+                                <div class="col-75">
+                                <input placeholder="Last Name" required="required" type="text" id="lname" name="lname">
+                                </div>
                             </div>
-        
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                </div>
+                                <div class="col-75">
+                                <input placeholder="Email" required="required" type="email" id="email" name="email">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="mobile"><i class="fa fa-phone"></i> Mobile Number</label>
+                                </div>
+                                <div class="col-75">
+                                <input placeholder="Mobile Number" required="required" type="number" id="mobile" name="mobile">
+                                </div>
+                            </div>
+
+                            <hr>
+                            <legend><h4>Payment information</h4></legend>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="cnumber"><i class="fa fa-cc-visa"></i> Card Number</label>
+                                </div>
+                                <div class="col-75">
+                                <input placeholder="Card Number" required="required" type="number" id="cnumber" name="cnumber">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="expdate"><i class="fa fa-calendar"></i> Expiry Date</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="EXP Date" required="required" type="month" id="expdate" name="expdate">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="password"><i class="fa fa-key"></i> Password</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Password" required="required" type="password" id="password" name="password">
+                                </div>
+                            </div>
+
+
+            
+                        
+                                <div class="row">
+                                    <button id="submit">Submit</button>
+                                </div>
+                            </span>
+
+
+                            <div id="thank_you" style="display: none;">
+                                <img width="250px" src="https://i.pinimg.com/originals/35/f3/23/35f323bc5b41dc4269001529e3ff1278.gif">
+                                <p>Thanks for filling up the form!</p>
+                            </div>
+            
                     </fieldset>
                 </form>
             </div>
@@ -223,6 +266,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
         <script src="js/app.js"></script>
+
+        <script>
+            var submit = document.querySelector('#submit');
+
+            submit.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Hide first view
+            document.getElementById('forminputs').style.display = 'none';
+
+            // Show thank you message element
+            document.getElementById('thank_you').style.display = 'block';
+
+            });
+        </script>
 
     </footer>
 
