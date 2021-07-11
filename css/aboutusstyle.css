@@ -28,8 +28,8 @@ body {
     margin: 10px;
     display: inline-block;
     position: relative;
-    width: 220px;
-    height: 260px;
+    width: 300px;
+    height: 400px;
     opacity: 0.85;
 }
 .front,
@@ -49,18 +49,22 @@ body {
 }
 .front {
     transform: rotateY(0deg);
-    background: -webkit-linear-gradient(top left, #dd709d, #db006e);
-    background: linear-gradient(to bottom right, #dd709d, #db006e);
+    background: -webkit-linear-gradient(top left, #fa96c0, #db006e);
+    background: linear-gradient(to bottom right, #fa96c0, #db006e);
     text-align: center;
     padding: 30px;
 }
 .back {
-    background: -webkit-linear-gradient(top left, #db006e, #dd709d);
-    background: linear-gradient(to bottom right, #db006e, #dd709d);
+    background: -webkit-linear-gradient(top left, #db006e, #fa96c0);
+    background: linear-gradient(to bottom right, #db006e, #fa96c0);
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
     padding: 40px 15px;
     color: #fff;
+    font-size: 22px;
+    padding: 6px;
+    padding-top: 100px;
+
 }
 .card:hover .front {
     -webkit-transform: rotateY(-180deg);
@@ -72,8 +76,8 @@ body {
 }
 /* styling */
 .front .contact {
-    height: 120px;
-    width: 120px;
+    height: 220px;
+    width: 220px;
     border: 5px solid #B2DBBF;
     border-radius: 50%;
     display: inline-block;
@@ -81,11 +85,12 @@ body {
 }
 .front .name {
     display: inline-block;
-    font-size: 18px;
+    font-size: 27px;
     color: #fff;
 }
 .front .job {
     color: #fff;
+    font-size: 22px;
 }
 .front hr {
     border: none;
@@ -103,4 +108,20 @@ body {
 .back .icon:hover {
     cursor: pointer;
     color: #648767;
+}
+
+#heroBG{
+    background: url(../img/herobg.jpg);
+    animation: slideUp 60s linear infinite;
+    background-repeat: repeat;
+    width: 100%;
+    height: 600px;
+    box-shadow:inset 0 0 0 2000px rgba(19, 23, 34, 0.7);
+}
+
+#feat{
+ text-align: center;
+ color: #fff;
+ font-size: 50px;
+ margin-top: 150px;
 }
