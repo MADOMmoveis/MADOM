@@ -126,17 +126,20 @@
         </section>
         <section id="formSection">
             <div class="center container2">
-                <form action="" id="addLocation" >
+                <form action="" id="addLocation">
                     <fieldset>
 
-                        <legend><h4>Checkout</h4></legend>
+                        <legend>
+                            <h4>Checkout</h4>
+                        </legend>
                         <span id="forminputs">
                             <div class="row">
                                 <div class="col-25">
                                     <label for="fname"><i class="fa fa-user"></i> First Name</label>
                                 </div>
                                 <div class="col-75">
-                                <input placeholder="First Name" required="required" type="text" id="fname" name="fname">
+                                    <input placeholder="First Name" required="required" type="text" id="fname"
+                                        name="fname">
                                 </div>
                             </div>
 
@@ -145,7 +148,8 @@
                                     <label for="lname"><i class="fa fa-user"></i> Last Name</label>
                                 </div>
                                 <div class="col-75">
-                                <input placeholder="Last Name" required="required" type="text" id="lname" name="lname">
+                                    <input placeholder="Last Name" required="required" type="text" id="lname"
+                                        name="lname">
                                 </div>
                             </div>
 
@@ -154,7 +158,7 @@
                                     <label for="email"><i class="fa fa-envelope"></i> Email</label>
                                 </div>
                                 <div class="col-75">
-                                <input placeholder="Email" required="required" type="email" id="email" name="email">
+                                    <input placeholder="Email" required="required" type="email" id="email" name="email">
                                 </div>
                             </div>
 
@@ -163,19 +167,23 @@
                                     <label for="mobile"><i class="fa fa-phone"></i> Mobile Number</label>
                                 </div>
                                 <div class="col-75">
-                                <input placeholder="Mobile Number" required="required" type="number" id="mobile" name="mobile">
+                                    <input placeholder="Mobile Number" required="required" type="number" id="mobile"
+                                        name="mobile">
                                 </div>
                             </div>
 
                             <hr>
-                            <legend><h4>Payment information</h4></legend>
+                            <legend>
+                                <h4>Payment information</h4>
+                            </legend>
 
                             <div class="row">
                                 <div class="col-25">
                                     <label for="cnumber"><i class="fa fa-cc-visa"></i> Card Number</label>
                                 </div>
                                 <div class="col-75">
-                                <input placeholder="Card Number" required="required" type="number" id="cnumber" name="cnumber">
+                                    <input placeholder="Card Number" required="required" type="number" id="cnumber"
+                                        name="cnumber">
                                 </div>
                             </div>
 
@@ -184,7 +192,8 @@
                                     <label for="expdate"><i class="fa fa-calendar"></i> Expiry Date</label>
                                 </div>
                                 <div class="col-75">
-                                    <input placeholder="EXP Date" required="required" type="month" id="expdate" name="expdate">
+                                    <input placeholder="EXP Date" required="required" type="month" id="expdate"
+                                        name="expdate">
                                 </div>
                             </div>
 
@@ -193,30 +202,38 @@
                                     <label for="password"><i class="fa fa-key"></i> Password</label>
                                 </div>
                                 <div class="col-75">
-                                    <input placeholder="Password" required="required" type="password" id="password" name="password">
+                                    <input placeholder="Password" required="required" type="password" id="password"
+                                        name="password">
                                 </div>
                             </div>
 
 
-            
-                        
-                                <div class="row">
-                                    <button id="submit">Submit</button>
-                                </div>
-                            </span>
 
 
-                            <div id="thank_you" style="display: none;">
-                                <img width="250px" src="https://i.pinimg.com/originals/35/f3/23/35f323bc5b41dc4269001529e3ff1278.gif">
-                                <p>Thanks for filling up the form!</p>
+                            <div class="row">
+                                <button id="submit">Submit</button>
                             </div>
-            
+                        </span>
+
+
+                        <div id="thank_you" style="display: none;">
+                            <img width="250px"
+                                src="https://i.pinimg.com/originals/35/f3/23/35f323bc5b41dc4269001529e3ff1278.gif">
+                            <p>Thanks for filling up the form!</p>
+                        </div>
+
                     </fieldset>
                 </form>
             </div>
         </section>
 
-
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
 
 
     </main>
@@ -271,12 +288,12 @@
             var submit = document.querySelector('#submit');
 
             submit.addEventListener('click', function (e) {
-            e.preventDefault();
-            // Hide first view
-            document.getElementById('forminputs').style.display = 'none';
+                e.preventDefault();
+                // Hide first view
+                document.getElementById('forminputs').style.display = 'none';
 
-            // Show thank you message element
-            document.getElementById('thank_you').style.display = 'block';
+                // Show thank you message element
+                document.getElementById('thank_you').style.display = 'block';
 
             });
         </script>

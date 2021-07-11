@@ -136,6 +136,7 @@ table{
     margin-left:10%;
     margin-top:25px;
     margin-bottom:25px;
+    margin-right: 10%;
     color:white;  
 }
 
@@ -151,7 +152,10 @@ fieldset {
     color: white;
     padding: 10px 10px;
     border-radius: 5px;
-    width: 95%;
+    width: 98%;
+    margin-right: 25px;
+    margin-left: 5px;
+    padding: 15px;
     text-align: center;
   }
   
@@ -225,7 +229,10 @@ fieldset {
 .container2 {
     border-radius: 5px;
     background-color:#8e929b;
-    padding: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
 }
 
 .fa-phone{
@@ -234,8 +241,9 @@ fieldset {
 
 #thank_you{
     text-align: center;
-    width: 95%;
+    width: 99.9%;
     background: #F7F7F7;
+    margin-left: 5px;
 }
 
 
