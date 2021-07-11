@@ -1,5 +1,6 @@
 'use strict';
 
+
 // Movies Constructor
 
 let moviesArray = [];
@@ -228,7 +229,12 @@ function actionImgs(){
     let actionImg = document.createElement('img');
     while (randomArray.includes(randomNumber) || moviesArray[randomNumber].genre !== 'Action'){
       randomNumber = genRandom(0, moviesArray.length);
+      
     }
+
+    let movieCol = document.createElement('div');
+    actionCategory.appendChild(movieCol);
+    movieCol.className = 'col-20';
     randomArray.push(randomNumber);
     actionImg.setAttribute('src', moviesArray[randomNumber].img);
     actionImg.className += `purchasable ${moviesArray[randomNumber].id}`;
@@ -236,7 +242,7 @@ function actionImgs(){
     actionImg.setAttribute('width', 230);
     actionImg.setAttribute('height', 300);
 
-    actionDiv.appendChild(actionImg);
+    movieCol.appendChild(actionImg);
 
   }
 
@@ -256,6 +262,12 @@ function comedyImgs(){
     while (randomArray.includes(randomNumber) || moviesArray[randomNumber].genre !== 'Comedy'){
       randomNumber = genRandom(0, moviesArray.length);
     }
+
+    let movieCol = document.createElement('div');
+    comedyCategory.appendChild(movieCol);
+    movieCol.className = 'col-20';
+
+
     randomArray.push(randomNumber);
     comedyImg.setAttribute('src', moviesArray[randomNumber].img);
     comedyImg.className += `purchasable ${moviesArray[randomNumber].id}`;
@@ -263,7 +275,7 @@ function comedyImgs(){
     comedyImg.setAttribute('width', 230);
     comedyImg.setAttribute('height', 300);
 
-    comedyDiv.appendChild(comedyImg);
+    movieCol.appendChild(comedyImg);
 
   }
 
@@ -283,13 +295,19 @@ function dramaImgs(){
     while (randomArray.includes(randomNumber) || moviesArray[randomNumber].genre !== 'Drama'){
       randomNumber = genRandom(0, moviesArray.length);
     }
+
+    let movieCol = document.createElement('div');
+    dramaCategory.appendChild(movieCol);
+    movieCol.className = 'col-20';
+
+
     randomArray.push(randomNumber);
     dramaImg.setAttribute('src', moviesArray[randomNumber].img);
     dramaImg.className += `purchasable ${moviesArray[randomNumber].id}`;
     dramaImg.setAttribute('width', 230);
     dramaImg.setAttribute('height', 300);
 
-    dramaDiv.appendChild(dramaImg);
+    movieCol.appendChild(dramaImg);
 
   }
 

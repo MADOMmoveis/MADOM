@@ -198,6 +198,17 @@ fieldset {
     background-color: #92072a;
   }
 
+  .col-20 {
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+  }
+
+  .col-20 img{
+      width: 230px!important;
+      height: 300px!important;
+  }
+
   .col-25 {
     float: left;
     width: 25%;
@@ -889,20 +900,16 @@ button.swiper-pagination-bullet {
 /*end swiper */
 
 #actionCategory h5 span {
-   border-radius: 2%;
    color: #fff;
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
-   border-radius: 5px;
 }
 #comedyCategory h5 span {
-    border-radius: 2%;
    color: #fff;
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
-   border-radius: 5px;
    }
 #comedyCategory , #dramaCategory {
     padding-top: 1%;
@@ -911,12 +918,10 @@ button.swiper-pagination-bullet {
     
 
 #dramaCategory h5 span{
-    border-radius: 2%;
    color: #fff;
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
-   border-radius: 5px;
 }
 
 
@@ -999,7 +1004,6 @@ button.swiper-pagination-bullet {
     #bottomoverline button{
     z-index: 1;
     margin-top: -15px;
-    position: absolute;
     }
     #bottomoverline{
         padding-top: 2%;
@@ -1055,9 +1059,23 @@ button.swiper-pagination-bullet {
         float: left;
         margin-left: 15%;
         margin-top: -113px;
-        }
+    }
+
+    section#categories{
+        margin: 25px;
+        padding: 10px;
+        padding-top: 10px!important;
+        background: var(--primary);
+    }
         
-    
+    div#actionCategory{
+        margin-top: 10px;
+        margin-bottom: 10px ;
+    }
+
+    .fa.fa-star-half-o:before {
+        color: #FFBF00;
+    }
 
     /* #bottomoverline button{
         position: absolute;

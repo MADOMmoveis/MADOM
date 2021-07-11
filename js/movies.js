@@ -15,8 +15,12 @@ function actionImgs(){
   let actionCategoryEl = document.createElement('div');
   moviesDivEl.appendChild(actionCategoryEl);
 
-  for (let i = 0; i < 5 ; i++){
+  for (let i = 0; i < 10; i++){
     let randomNumber = genRandom(0, moviesArray.length);
+
+    let movieCol  = document.createElement('div');
+    moviesDivEl.appendChild(movieCol);
+    movieCol.className='col-20';
 
     let actionImg = document.createElement('img');
     while (randomArray.includes(randomNumber) || moviesArray[randomNumber].genre !== 'Action'){
@@ -25,10 +29,10 @@ function actionImgs(){
     randomArray.push(randomNumber);
     actionImg.setAttribute('src', moviesArray[randomNumber].img);
 
-    actionImg.setAttribute('width', 230);
-    actionImg.setAttribute('height', 300);
+    //actionImg.setAttribute('width', 230);
+    //actionImg.setAttribute('height', 300);
 
-    actionCategoryEl.appendChild(actionImg);
+    movieCol.appendChild(actionImg);
 
   }
 
@@ -45,8 +49,12 @@ function comedyImgs(){
   let comedyCategoryEl = document.createElement('div');
   moviesDivEl.appendChild(comedyCategoryEl);
 
-  for (let i = 0; i < 5 ; i++){
+  for (let i = 0; i < 10 ; i++){
     let randomNumber = genRandom(0, moviesArray.length);
+
+    let comedyCol = document.createElement('div');
+    moviesDivEl.appendChild(comedyCol);
+    comedyCol.className = 'col-20';
 
     let comedyImg = document.createElement('img');
     while (randomArray.includes(randomNumber) || moviesArray[randomNumber].genre !== 'Comedy'){
@@ -58,7 +66,7 @@ function comedyImgs(){
     comedyImg.setAttribute('width', 230);
     comedyImg.setAttribute('height', 300);
 
-    comedyCategoryEl.appendChild(comedyImg);
+    comedyCol.appendChild(comedyImg);
 
   }
 
@@ -76,8 +84,12 @@ function dramaImgs(){
   let dramaCategoryEl = document.createElement('div');
   moviesDivEl.appendChild(dramaCategoryEl);
 
-  for (let i = 0; i < 5 ; i++){
+  for (let i = 0; i < 10 ; i++){
     let randomNumber = genRandom(0, moviesArray.length);
+
+    let dramaCol = document.createElement('div');
+    moviesDivEl.appendChild(dramaCol);
+    dramaCol.className = 'col-20';
 
     let dramaImg = document.createElement('img');
     while (randomArray.includes(randomNumber) || moviesArray[randomNumber].genre !== 'Drama'){
@@ -89,7 +101,7 @@ function dramaImgs(){
     dramaImg.setAttribute('width', 230);
     dramaImg.setAttribute('height', 300);
 
-    dramaCategoryEl.appendChild(dramaImg);
+    dramaCol.appendChild(dramaImg);
 
   }
 
