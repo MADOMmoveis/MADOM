@@ -1,4 +1,4 @@
-
+'use strict';
 
 // Movies Constructor
 
@@ -7,6 +7,7 @@ let moviesArray = [];
 // let moviesComedy = [];
 // let moviesDrama = [];
 
+//EDIT >> ADD PRICE
 function Movie(id, img, movieName, genre, rating){
   this.img = img;
   this.movieName = movieName;
@@ -14,6 +15,7 @@ function Movie(id, img, movieName, genre, rating){
   this.genre = genre;
   this.fav;
   this.description;
+  this.id = id;
 
   moviesArray.push(this);
 
@@ -169,11 +171,45 @@ function sliderFn(){
     randomArray.push(randomNumber);
 
     randomImg.setAttribute('src', moviesArray[randomNumber].img);
+    randomImg.className += `purchasable ${moviesArray[randomNumber].id}`;
+
     sliderImg.appendChild(randomImg);
   }
 }
 
 sliderFn();
+
+
+
+// Append to Top Rated
+
+function topRated(){
+
+  let sliderWrapper = document.getElementsByClassName('swiper-wrapper')[1];
+  let randomArray = [];
+  for (let i = 0; i<6; i++){
+    let randomNumber = genRandom(0, moviesArray.length);
+    let swiperSlide = document.createElement('div');
+    swiperSlide.setAttribute('class', 'swiper-slide');
+    sliderWrapper.appendChild(swiperSlide);
+
+    let sliderImg = document.createElement('div');
+    sliderImg.setAttribute('class', 'slider-image');
+    swiperSlide.appendChild(sliderImg);
+
+    let randomImg = document.createElement('img');
+    while (randomArray.includes(randomNumber) || parseFloat(moviesArray[randomNumber].rating) >= 6){
+      randomNumber = genRandom(0, moviesArray.length);
+    }
+    randomArray.push(randomNumber);
+
+    randomImg.setAttribute('src', moviesArray[randomNumber].img);
+    randomImg.className += `purchasable ${moviesArray[randomNumber].id}`;
+    sliderImg.appendChild(randomImg);
+  }
+}
+
+topRated();
 
 
 
@@ -195,6 +231,8 @@ function actionImgs(){
     }
     randomArray.push(randomNumber);
     actionImg.setAttribute('src', moviesArray[randomNumber].img);
+    actionImg.className += `purchasable ${moviesArray[randomNumber].id}`;
+
     actionImg.setAttribute('width', 230);
     actionImg.setAttribute('height', 300);
 
@@ -220,6 +258,8 @@ function comedyImgs(){
     }
     randomArray.push(randomNumber);
     comedyImg.setAttribute('src', moviesArray[randomNumber].img);
+    comedyImg.className += `purchasable ${moviesArray[randomNumber].id}`;
+
     comedyImg.setAttribute('width', 230);
     comedyImg.setAttribute('height', 300);
 
@@ -245,6 +285,7 @@ function dramaImgs(){
     }
     randomArray.push(randomNumber);
     dramaImg.setAttribute('src', moviesArray[randomNumber].img);
+    dramaImg.className += `purchasable ${moviesArray[randomNumber].id}`;
     dramaImg.setAttribute('width', 230);
     dramaImg.setAttribute('height', 300);
 
@@ -258,6 +299,57 @@ function dramaImgs(){
 actionImgs();
 comedyImgs();
 dramaImgs();
+
+
+
+
+
+// Cart Constructor
+
+function Cart(allMovies){
+  //Contains all picked movies
+  this.allMovies = allMovies;
+}
+
+
+
+// Save Cart in Local Storage
+
+Cart.prototype.saveCart = function(){
+  let currentCart = JSON.stringify(this.allMovies);
+  localStorage.setItem('cart', currentCart);
+};
+
+
+let cart = new Cart([]);
+
+
+// Add Movies to Cart
+
+let purchasableEl = document.getElementsByClassName('purchasable');
+
+for (let i = 0 ; i < purchasableEl.length ; i++){
+
+  purchasableEl[i].addEventListener('click', addToCart);
+
+}
+// ADD POP UP IF DUPLICATE
+function addToCart(event){
+  let selectedMovie =event.target;
+  console.log(typeof(selectedMovie));
+
+  let specificSelect = selectedMovie.className.split(' ')[1];
+  console.log(specificSelect);
+  cart.allMovies.push(specificSelect);
+  cart.saveCart();
+  console.log(cart);
+
+}
+
+console.log(cart);
+
+
+
 
 
 /* swiper start */
