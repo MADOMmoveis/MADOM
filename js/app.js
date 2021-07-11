@@ -1,4 +1,4 @@
-
+'use strict';
 
 // Movies Constructor
 
@@ -312,23 +312,6 @@ function Cart(allMovies){
 }
 
 
-// Cart Items Constructor
-
-function CartItem(pickedMovie){
-  // Contains each movie picked for purchase
-  this.pickedMovie = pickedMovie;
-}
-
-
-// Add Items to Cart
-
-Cart.prototype.addMovie = function(pickedMovie){
-  // Create an object for each picked movie
-  let newMovie = new CartItem (pickedMovie);
-  // Assign the picked movie to the Cart Object
-  this.allMovies.push(newMovie);
-};
-
 
 // Save Cart in Local Storage
 
@@ -337,7 +320,9 @@ Cart.prototype.saveCart = function(){
   localStorage.setItem('cart', currentCart);
 };
 
+
 let cart = new Cart([]);
+
 
 // Add Movies to Cart
 
@@ -348,7 +333,7 @@ for (let i = 0 ; i < purchasableEl.length ; i++){
   purchasableEl[i].addEventListener('click', addToCart);
 
 }
-
+// ADD POP UP IF DUPLICATE
 function addToCart(event){
   let selectedMovie =event.target;
   console.log(typeof(selectedMovie));
