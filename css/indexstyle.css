@@ -904,6 +904,7 @@ button.swiper-pagination-bullet {
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
+   
 }
 #comedyCategory h5 span {
    color: #fff;
@@ -1005,6 +1006,7 @@ button.swiper-pagination-bullet {
     #bottomoverline button{
     z-index: 1;
     margin-top: 10px;
+    
     }
     #bottomoverline{
         padding-top: 2%;
@@ -1059,7 +1061,7 @@ button.swiper-pagination-bullet {
         display: flex;
         float: left;
         margin-left: 15%;
-        margin-top: -113px;
+        margin-top: -78px;
     }
 
     section#categories{
@@ -1082,3 +1084,7 @@ button.swiper-pagination-bullet {
         position: absolute;
     } */
 
+#socialMedia p{
+    margin-right: 1009px;
+    
+}
