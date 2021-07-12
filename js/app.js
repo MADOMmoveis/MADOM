@@ -13,7 +13,7 @@ let favorite = [];
 
 
 //EDIT >> ADD PRICE
-function Movie(id, img, movieName, genre, rating){
+function Movie(id, img, movieName, genre, rating,price1){
   this.img = img;
   this.movieName = movieName;
   this.rating= rating;
@@ -21,6 +21,7 @@ function Movie(id, img, movieName, genre, rating){
   this.fav;
   this.description;
   this.id = id;
+  this.price1=price1;
 
   moviesArray.push(this);
 
@@ -29,36 +30,36 @@ function Movie(id, img, movieName, genre, rating){
 // Create Movies
 
 function generateMovies(){
-  new Movie(0, 'img/Action/Bloodshot.jpg','Bloodshot', 'Action', '5.7');
-  new Movie(1, 'img/Action/Fury.jpg', 'Fury', 'Action', '7.6');
-  new Movie(2, 'img/Action/Gemini Man.jpg', 'Gemini Man', 'Action', '5.7');
-  new Movie(3, 'img/Action/Godzilla vs Kong.jpg', 'Godzilla vs Kong' ,'Action', '6.4');
-  new Movie(4, 'img/Action/John Wick.jpg', 'John Wick','Action', '7.4');
-  new Movie(5, 'img/Action/Maze Runner.jpg', 'Maze Runner','Action', '6.8');
-  new Movie(6, 'img/Action/Spenser Confidential.jpg', 'Spenser Confidential','Action', '6.2');
-  new Movie(7, 'img/Action/The Dark Tower.jpg', 'The Dark Tower','Action', '5.6');
-  new Movie(8, 'img/Action/The Tomorrow War.jpg', 'The Tomorrow War','Action', '6.7');
-  new Movie(9, 'img/Action/Without Remorse.jpg', 'Without Remorse' ,'Action', '5.8');
-  new Movie(10, 'img/Comedy/Cats and Dogs.jpg', 'Cats and Dogs', 'Comedy', '5.1');
-  new Movie(11, 'img/Comedy/Game Night.jpg', 'Game Night', 'Comedy', '6.9');
-  new Movie(12, 'img/Comedy/Get Hard.jpg', 'Get Hard', 'Comedy', '6');
-  new Movie(13, 'img/Comedy/Hangover.jpg', 'Hangover', 'Comedy', '7.7');
-  new Movie(14, 'img/Comedy/Instant Family.jpg', 'Instant Family', 'Comedy', '7.3');
-  new Movie(15, 'img/Comedy/Jumanji.jpg', 'Jumanji', 'Comedy', '7');
-  new Movie(16, 'img/Comedy/Swiss Army Man.jpg', 'Swiss Army Man', 'Comedy', '7');
-  new Movie(17, 'img/Comedy/The DDD.jpg', 'The Dead Don\'t Die', 'Comedy', '5.5');
-  new Movie(18, 'img/Comedy/The Mitchells.jpg', 'The Mitchells', 'Comedy', '7.7');
-  new Movie(19, 'img/Comedy/Zombieland.jpg', 'Zombieland', 'Comedy', '7.6');
-  new Movie(20, 'img/Drama/Cast Away.jpg', 'Cast Away', 'Drama', '7.8');
-  new Movie(21, 'img/Drama/Dunkirk.jpg', 'Dunkirk', 'Drama', '7.8');
-  new Movie(22, 'img/Drama/Forrest Gump.jpg', 'Forrest Gump', 'Drama', '8.8');
-  new Movie(23, 'img/Drama/Frozen.jpg', 'Frozen', 'Drama', '7.4');
-  new Movie(24, 'img/Drama/Joker.jpg', 'Joker', 'Drama', '8.4');
-  new Movie(25, 'img/Drama/Shutter Island.jpg', 'Shutter Island', 'Drama', '8.2');
-  new Movie(26, 'img/Drama/Tenet.jpg', 'Tenet', 'Drama', '7.4');
-  new Movie(27, 'img/Drama/The Hunter.jpg', 'The Hunter', 'Drama', '6.7');
-  new Movie(28, 'img/Drama/The Revenant.jpg', 'The Revenant', 'Drama', '8');
-  new Movie(29, 'img/Drama/The Terminal.jpg', 'The Terminal', 'Drama', '7.4');
+  new Movie(0, 'img/Action/Bloodshot.jpg','Bloodshot', 'Action', '5.7','5.7 $');
+  new Movie(1, 'img/Action/Fury.jpg', 'Fury', 'Action', '7.6','5.7 $');
+  new Movie(2, 'img/Action/Gemini Man.jpg', 'Gemini Man', 'Action', '5.7','5.7 $');
+  new Movie(3, 'img/Action/Godzilla vs Kong.jpg', 'Godzilla vs Kong' ,'Action', '6.4','5.7 $');
+  new Movie(4, 'img/Action/John Wick.jpg', 'John Wick','Action', '7.4','5.7 $');
+  new Movie(5, 'img/Action/Maze Runner.jpg', 'Maze Runner','Action', '6.8','5.7 $');
+  new Movie(6, 'img/Action/Spenser Confidential.jpg', 'Spenser Confidential','Action', '6.2','5.7 $');
+  new Movie(7, 'img/Action/The Dark Tower.jpg', 'The Dark Tower','Action', '5.6','5.7 $');
+  new Movie(8, 'img/Action/The Tomorrow War.jpg', 'The Tomorrow War','Action', '6.7','5.7 $');
+  new Movie(9, 'img/Action/Without Remorse.jpg', 'Without Remorse' ,'Action', '5.8','5.7 $');
+  new Movie(10, 'img/Comedy/Cats and Dogs.jpg', 'Cats and Dogs', 'Comedy', '5.1','10 $');
+  new Movie(11, 'img/Comedy/Game Night.jpg', 'Game Night', 'Comedy', '6.9','10 $');
+  new Movie(12, 'img/Comedy/Get Hard.jpg', 'Get Hard', 'Comedy', '6','10 $');
+  new Movie(13, 'img/Comedy/Hangover.jpg', 'Hangover', 'Comedy', '7.7','10 $');
+  new Movie(14, 'img/Comedy/Instant Family.jpg', 'Instant Family', 'Comedy', '7.3','10 $');
+  new Movie(15, 'img/Comedy/Jumanji.jpg', 'Jumanji', 'Comedy', '7','10 $');
+  new Movie(16, 'img/Comedy/Swiss Army Man.jpg', 'Swiss Army Man', 'Comedy', '7','10 $');
+  new Movie(17, 'img/Comedy/The DDD.jpg', 'The Dead Don\'t Die', 'Comedy', '5.5','10 $');
+  new Movie(18, 'img/Comedy/The Mitchells.jpg', 'The Mitchells', 'Comedy', '7.7','10 $');
+  new Movie(19, 'img/Comedy/Zombieland.jpg', 'Zombieland', 'Comedy', '7.6','10 $');
+  new Movie(20, 'img/Drama/Cast Away.jpg', 'Cast Away', 'Drama', '7.8','20 $');
+  new Movie(21, 'img/Drama/Dunkirk.jpg', 'Dunkirk', 'Drama', '7.8','20 $');
+  new Movie(22, 'img/Drama/Forrest Gump.jpg', 'Forrest Gump', 'Drama', '8.8','20 $');
+  new Movie(23, 'img/Drama/Frozen.jpg', 'Frozen', 'Drama', '7.4','20 $');
+  new Movie(24, 'img/Drama/Joker.jpg', 'Joker', 'Drama', '8.4','20 $');
+  new Movie(25, 'img/Drama/Shutter Island.jpg', 'Shutter Island', 'Drama', '8.2','20 $');
+  new Movie(26, 'img/Drama/Tenet.jpg', 'Tenet', 'Drama', '7.4','20 $');
+  new Movie(27, 'img/Drama/The Hunter.jpg', 'The Hunter', 'Drama', '6.7','20 $');
+  new Movie(28, 'img/Drama/The Revenant.jpg', 'The Revenant', 'Drama', '8','20 $');
+  new Movie(29, 'img/Drama/The Terminal.jpg', 'The Terminal', 'Drama', '7.4','20 $');
 
 }
 generateMovies();
@@ -338,11 +339,15 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-
+      let Price=document.createElement('h5')
+      Price.className='moviePrice';
+      Price.textContent=`Price${moviesArray[randomNumber].price1}`;
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
       movieData.appendChild(rating);
+      movieData.appendChild(Price);
+
       movieData.appendChild(movieAddToCart);
 
 
@@ -427,10 +432,17 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+      
+      let Price=document.createElement('h4')
+      Price.className='moviePrice';
+      Price.textContent=`Price${moviesArray[randomNumber].price1}`;
+
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
       movieData.appendChild(rating);
+      movieData.appendChild(Price);
+
       movieData.appendChild(movieAddToCart);
 
       movieCol.appendChild(comedyImg);
@@ -504,11 +516,17 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+      
+      let Price=document.createElement('h4')
+      Price.className='moviePrice';
+      Price.textContent=`Price${moviesArray[randomNumber].price1}`;
 
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
       movieData.appendChild(rating);
+      movieData.appendChild(Price);
+
       movieData.appendChild(movieAddToCart);
 
       movieCol.appendChild(dramaImg);
