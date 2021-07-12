@@ -36,16 +36,22 @@ function populateCart(){
 
   let strCart = localStorage.getItem('cart') || [];
   let objCart = JSON.parse(strCart);
+  console.log(objCart);
 
   cartTable.textContent = '';
-
+  let sum=0;
 
   for (let i = 0; i <objCart.length; i++){
+
 
     let rowEl = document.createElement('tr');
     cartTable.appendChild(rowEl);
 
     let matched = idMatch(objCart[i]);
+    console.log(typeof objCart[i]);
+    sum+=Number((moviesArray[matched].price1).split(' ')[0]);
+    console.log(sum);
+
 
 
     let tdId = document.createElement('td');
@@ -63,9 +69,14 @@ function populateCart(){
     let tdName = document.createElement('td');
     tdName.textContent = moviesArray[matched].movieName;
     rowEl.appendChild(tdName);
+    let prIce=document.createElement('td');
+    prIce.textContent=`${ moviesArray[matched].price1}`
+    rowEl.appendChild(prIce);
 
     let tdBtn = document.createElement('td');
     rowEl.appendChild(tdBtn);
+    
+
 
     let removeBtn = document.createElement('button');
     removeBtn.innerHTML= '<i class="fa fa-close">';
@@ -84,6 +95,17 @@ function populateCart(){
     // tdPrice.textContent = moviesArray[matched].price;
     // rowEl.appendChild(tdPrice);
   }
+  let totalRw=document.createElement('tfoot');
+  let totalTd=document.createElement('td');
+  totalTd.textContent='Total Price';
+  totalRw.appendChild(totalTd);
+  cartTable.appendChild(totalRw);
+  let priceEl=document.createElement('td');
+  priceEl.textContent=sum;
+  totalRw.appendChild(priceEl);
+
+
+
 }
 populateCart();
 
