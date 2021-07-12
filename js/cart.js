@@ -29,7 +29,7 @@ function idMatch(storedID){
 
 
 // Append Cart Items
-let cartTable = document.getElementById('cartPreview');
+let cartTable = document.getElementById('cartBody');
 
 
 function populateCart(){
@@ -38,31 +38,47 @@ function populateCart(){
   let objCart = JSON.parse(strCart);
 
   cartTable.textContent = '';
+
+
   for (let i = 0; i <objCart.length; i++){
+
     let rowEl = document.createElement('tr');
     cartTable.appendChild(rowEl);
+
+    let matched = idMatch(objCart[i]);
+
+
+    let tdId = document.createElement('td');
+    tdId.textContent = moviesArray[matched].id;
+    rowEl.appendChild(tdId);
+
+    let tdImg = document.createElement('td');
+    let movieImg = document.createElement('img');
+    movieImg.className = 'cartimg';
+    movieImg.setAttribute('src', moviesArray[matched].img);
+    tdImg.appendChild(movieImg);
+    rowEl.appendChild(tdImg);
+
+
+    let tdName = document.createElement('td');
+    tdName.textContent = moviesArray[matched].movieName;
+    rowEl.appendChild(tdName);
 
     let tdBtn = document.createElement('td');
     rowEl.appendChild(tdBtn);
 
     let removeBtn = document.createElement('button');
-    removeBtn.textContent= 'X';
+    removeBtn.innerHTML= '<i class="fa fa-close">';
+    removeBtn.className='removecart';
     removeBtn.setAttribute('id', [i]);
     removeBtn.addEventListener('click', removeMovie)
     tdBtn.appendChild(removeBtn);
 
 
 
-    let tdImg = document.createElement('td');
-    let movieImg = document.createElement('img');
-    let matched = idMatch(objCart[i]);
-    movieImg.setAttribute('src', moviesArray[matched].img);
-    tdImg.appendChild(movieImg);
-    rowEl.appendChild(tdImg);
+    
 
-    let tdName = document.createElement('td');
-    tdName.textContent = moviesArray[matched].movieName;
-    rowEl.appendChild(tdName);
+    
 
     // let tdPrice = document.createElement('td');
     // tdPrice.textContent = moviesArray[matched].price;

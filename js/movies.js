@@ -32,7 +32,38 @@ function actionImgs(){
     //actionImg.setAttribute('width', 230);
     //actionImg.setAttribute('height', 300);
 
+
+    let movieData = document.createElement('div');
+    movieData.className ='cardData';
+
+    let movieAddToCart = document.createElement('button');
+    movieAddToCart.className = 'addtocartbtn';
+    movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+    movieData.appendChild(movieAddToCart);
+    // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+    movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    let h3 = document.createElement('h3');
+    h3.className = 'movietitle';
+    h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
+
+    let genre = document.createElement('h4');
+    genre.className = 'movieType';
+    genre.innerHTML = ('Type : ' + moviesArray[randomNumber].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>');
+
+    let rating = document.createElement('h4');
+    rating.className = 'movieRating';
+    rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+
+    movieData.appendChild(h3);
+    movieData.appendChild(genre);
+    movieData.appendChild(rating);
+    movieData.appendChild(movieAddToCart);
+
+
     movieCol.appendChild(actionImg);
+    movieCol.appendChild(movieData);
 
   }
 
@@ -66,7 +97,37 @@ function comedyImgs(){
     comedyImg.setAttribute('width', 230);
     comedyImg.setAttribute('height', 300);
 
+    let movieData = document.createElement('div');
+    movieData.className ='cardData';
+
+    let movieAddToCart = document.createElement('button');
+    movieAddToCart.className = 'addtocartbtn';
+    movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+    movieData.appendChild(movieAddToCart);
+    // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+    movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    let h3 = document.createElement('h3');
+    h3.className = 'movietitle';
+    h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
+
+    let genre = document.createElement('h4');
+    genre.className = 'movieType';
+    genre.innerHTML = ('Type : ' + moviesArray[randomNumber].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>');
+
+    let rating = document.createElement('h4');
+    rating.className = 'movieRating';
+    rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+
+
+    movieData.appendChild(h3);
+    movieData.appendChild(genre);
+    movieData.appendChild(rating);
+    movieData.appendChild(movieAddToCart);
+
     comedyCol.appendChild(comedyImg);
+    comedyCol.appendChild(movieData);
 
   }
 
@@ -101,7 +162,37 @@ function dramaImgs(){
     dramaImg.setAttribute('width', 230);
     dramaImg.setAttribute('height', 300);
 
+    let movieData = document.createElement('div');
+    movieData.className ='cardData';
+
+    let movieAddToCart = document.createElement('button');
+    movieAddToCart.className = 'addtocartbtn';
+    movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+    movieData.appendChild(movieAddToCart);
+    // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+    movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    let h3 = document.createElement('h3');
+    h3.className = 'movietitle';
+    h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
+
+    let genre = document.createElement('h4');
+    genre.className = 'movieType';
+    genre.innerHTML = ('Type : ' + moviesArray[randomNumber].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>');
+
+    let rating = document.createElement('h4');
+    rating.className = 'movieRating';
+    rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+
+
+    movieData.appendChild(h3);
+    movieData.appendChild(genre);
+    movieData.appendChild(rating);
+    movieData.appendChild(movieAddToCart);
+
     dramaCol.appendChild(dramaImg);
+    dramaCol.appendChild(movieData);
 
   }
 

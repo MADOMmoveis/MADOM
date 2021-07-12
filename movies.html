@@ -7,8 +7,36 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/indexstyle.css">
     <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>    <title>Movies</title>
+
+    <style>
+        .col-20{
+            margin-bottom: 14px;
+        }
+
+        #moviesDiv{
+            padding: 15px;
+        }
+    </style>
 </head>
-<body>
+<body onload="loadfun2()">
+    
+    <div class="bounce" id="loading" style="text-align: center;">
+        <img style="width: 350px; margin-top: 10%;" src="img/logo_MADOM.png"><br>
+        <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+    
+    <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog">
+        <i class="fa fa-check-circle"></i>
+        Movie has been added to cart !
+    </dialog>
+
+    <dialog style="color: firebrick; text-align: center; font-size: 18px;" id="myDialog2">
+        <i class="fa fa-close"></i>
+        This movie is already added to cart !
+    </dialog>
+
+
+
     <header>
         <nav class="navbar">
             <ul class="navlist">
@@ -17,23 +45,23 @@
                 </li>
                 <span class="navmid ">
                     <li class="navlistitem">
-                        <a href="index.html">Home</a>
+                        <a href="index.html"> <i class="fa fa-home"></i> Home</a>
                     </li>
                     <li class="navlistitem">
-                        <a href="movies.html">Movies</a>
+                        <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
                     </li>
                     <li class="navlistitem">
-                        <a href="packages.html">Packages</a>
+                        <a href="packages.html"><i class="fa fa-list-alt"></i> Packages</a>
                     </li>
                     <li class="navlistitem">
-                        <a href="aboutus.html">About Us</a>
+                        <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
                     </li>
                 </span>
                 <li class="navlistitem right">
                     <a href="#"><i class="fas fa-heart icon"></i></a>
                 </li>
                 <li class="navlistitem right">
-                    <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> </a>
+                    <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> <span id="cartSum"></span> </a>
                 </li>
                 <li class="navlistitem right">
                     <a href="#"><i class="fas fa-search icon"></i></a>
@@ -49,5 +77,20 @@
 
 <script src="js/app.js"></script>
 <script src="js/movies.js"></script>
+
+<script>
+    /*preloader*/
+    var load = document.getElementById('loading');
+    function loadfun2()
+    {
+    
+
+    setTimeout(function () {
+        load.style.display = 'none';
+    }, 3000);
+    }
+
+
+</script>
 
 </html>

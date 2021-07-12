@@ -59,6 +59,7 @@ body{
 }
 .icon {
     border: 1px solid #6c6c6c ;
+    background: #fff;
     border-radius: 50%;
     padding: 10px;
     color: var(--main);
@@ -207,6 +208,12 @@ fieldset {
   .col-20 img{
       width: 230px!important;
       height: 300px!important;
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
   }
 
   .col-25 {
@@ -858,6 +865,10 @@ button.swiper-pagination-bullet {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+.imgswiper2 img {
+    height: 300px!important;
+}
+
 .swiper-slide .slider-image .preview-icon {
     z-index: -1;
     width: calc(100% - 30px);
@@ -867,6 +878,38 @@ button.swiper-pagination-bullet {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     z-index: 1;
+}
+
+.slider-image img{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;}
+
+.movieData{
+    height: 100%;
+    width:inherit;
+    background: rgba(19, 23, 34, 0.7);
+    transition: .5s ease;
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 50%;
+}
+
+.slider-image img:hover{
+    opacity: 0.3;
+}
+
+.movieData:hover{
+    opacity: 1;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets,
@@ -904,6 +947,7 @@ button.swiper-pagination-bullet {
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
+   border-radius: 5px 5px 0 0;
    
 }
 #comedyCategory h5 span {
@@ -911,19 +955,23 @@ button.swiper-pagination-bullet {
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
+   border-radius: 5px 5px 0 0;
    }
 #comedyCategory , #dramaCategory {
-    padding-top: 1%;
+    padding-top: 30%;
     margin-top: 2%;
 }
 
-    
+#comedyCategory hr, #dramaCategory hr, #actionCategory hr{
+    border-color: rgba(255, 255, 255, 0.2);
+}
 
 #dramaCategory h5 span{
    color: #fff;
    background-color: #d50055;
    border: 2px solid #d50055;
    padding: 3px;
+   border-radius: 5px 5px 0 0;
 }
 
 
@@ -980,10 +1028,11 @@ button.swiper-pagination-bullet {
         width: 7%;
         margin-left: 45%;
         border-radius: 2%;
-        background-color: #d50055;
+        background-color: var(--primary);
         border: 2px solid #d50055;
         padding: 4px;
         border-radius: 5px;
+        margin-bottom: -33px;
         
          
     }
@@ -993,8 +1042,8 @@ button.swiper-pagination-bullet {
     }
     
     #viewAll:hover{
-        background-color: #fff;
-        color: #d50055
+        background-color: #030305;
+        color: #d50055;
     
     }
     
@@ -1002,10 +1051,13 @@ button.swiper-pagination-bullet {
         display: flex;
         align-items: center;
         margin-top: 0%;  
+        border-color: var(--main);
+
     }
     #bottomoverline button{
     z-index: 1;
-    margin-top: 10px;
+    margin-top: 30px;
+
     
     }
     #bottomoverline{
@@ -1065,15 +1117,18 @@ button.swiper-pagination-bullet {
     }
 
     section#categories{
-        margin: 25px;
-        padding: 10px;
-        padding-top: 10px!important;
+        padding: 35px;
+        padding-top: 60px!important;
         background: var(--primary);
     }
         
     div#actionCategory{
         margin-top: 10px;
         margin-bottom: 10px ;
+    }
+
+    #actionCategory h5{
+        margin-bottom: -2px!important;
     }
 
     .fa.fa-star-half-o:before {
@@ -1087,4 +1142,121 @@ button.swiper-pagination-bullet {
 #socialMedia p{
     margin-right: 1009px;
     
+}
+
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary);
+    z-index: 99999;
+
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+
+  .addtocartbtn{
+    background-color: #c70839;
+    color: white;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+
+}
+.addtocartbtn:hover{
+    background-color: #92072a;
+
+}
+
+.col-20 img{
+    border-top: 1px solid #535353;
+    border-left: 1px solid #535353;
+    border-right: 1px solid #535353;
+    border-radius: 5px 5px 0 0 ;
+    padding: 5px;
+}
+
+.cardData{
+    padding-top:10px;
+    background: #fff;
+    max-width: 230px;
+    color: var(--primary);
+    border-left: 1px solid #535353;
+    border-right: 1px solid #535353;
+    border-bottom: 1px solid #535353;
+    border-radius: 0 0 5px 5px;
+    padding: 5px;
+}
+
+.movietitle, .movieType, .movieRating{
+    margin-left: 10px;
+    margin-top:5px;
+}
+
+.movieType, .movieRating{
+    font-size: 12px;
+    color: #565656;
+}
+
+.cartimg{
+    width: 100px;
+}
+
+.removecart{
+    background-color: unset;
+    color: #c70839;
+    padding: 7px 15px;
+    border: none;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+span#cartSum{
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 2px 5px;
+    vertical-align: top;
+    margin-left: -10px; 
 }

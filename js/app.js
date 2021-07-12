@@ -1,6 +1,10 @@
 'use strict';
 
 
+var path = window.location.pathname;
+var page = path.split("/").pop();
+console.log( page );
+
 // Movies Constructor
 
 let moviesArray = [];
@@ -151,66 +155,104 @@ function genRandom(min, max) {
 
 // Append to Slider Image
 
-function sliderFn(){
+if(page == 'index.html'){
+  function sliderFn(){
 
-  let sliderWrapper = document.getElementsByClassName('swiper-wrapper')[0];
-  let randomArray = [];
-  for (let i = 0; i<15; i++){
-    let randomNumber = genRandom(0, moviesArray.length);
-    let swiperSlide = document.createElement('div');
-    swiperSlide.setAttribute('class', 'swiper-slide');
-    sliderWrapper.appendChild(swiperSlide);
+    let sliderWrapper = document.getElementsByClassName('swiper-wrapper')[0];
+    let randomArray = [];
+    for (let i = 0; i<15; i++){
+      let randomNumber = genRandom(0, moviesArray.length);
+      let swiperSlide = document.createElement('div');
+      swiperSlide.setAttribute('class', 'swiper-slide');
+      sliderWrapper.appendChild(swiperSlide);
 
-    let sliderImg = document.createElement('div');
-    sliderImg.setAttribute('class', 'slider-image');
-    swiperSlide.appendChild(sliderImg);
+      let sliderImg = document.createElement('div');
+      sliderImg.setAttribute('class', 'slider-image');
+      swiperSlide.appendChild(sliderImg);
 
-    let randomImg = document.createElement('img');
-    while (randomArray.includes(randomNumber)){
-      randomNumber = genRandom(0, moviesArray.length);
+      
+
+      let randomImg = document.createElement('img');
+      while (randomArray.includes(randomNumber)){
+        randomNumber = genRandom(0, moviesArray.length);
+      }
+      randomArray.push(randomNumber);
+
+      let movieData = document.createElement('div');
+      movieData.className ='movieData';
+      swiperSlide.appendChild(movieData);
+      let movieDesc = document.createElement('div');
+      movieDesc.className = 'movieDesc';
+      movieData.appendChild(movieDesc);
+
+      let movieAddToCart = document.createElement('button');
+      movieAddToCart.className = 'addtocartbtn';
+      movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+      movieData.appendChild(movieAddToCart);
+      // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+      movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+      movieDesc.textContent = moviesArray[randomNumber].description;
+
+      randomImg.setAttribute('src', moviesArray[randomNumber].img);
+      
+
+      sliderImg.appendChild(randomImg);
     }
-    randomArray.push(randomNumber);
-
-    randomImg.setAttribute('src', moviesArray[randomNumber].img);
-    randomImg.className += `purchasable ${moviesArray[randomNumber].id}`;
-
-    sliderImg.appendChild(randomImg);
   }
-}
 
-sliderFn();
-
+  sliderFn();
 
 
-// Append to Top Rated
 
-function topRated(){
+  // Append to Top Rated
 
-  let sliderWrapper = document.getElementsByClassName('swiper-wrapper')[1];
-  let randomArray = [];
-  for (let i = 0; i<6; i++){
-    let randomNumber = genRandom(0, moviesArray.length);
-    let swiperSlide = document.createElement('div');
-    swiperSlide.setAttribute('class', 'swiper-slide');
-    sliderWrapper.appendChild(swiperSlide);
+  function topRated(){
 
-    let sliderImg = document.createElement('div');
-    sliderImg.setAttribute('class', 'slider-image');
-    swiperSlide.appendChild(sliderImg);
+    let sliderWrapper = document.getElementsByClassName('swiper-wrapper')[1];
+    let randomArray = [];
+    for (let i = 0; i<6; i++){
+      let randomNumber = genRandom(0, moviesArray.length);
+      let swiperSlide = document.createElement('div');
+      swiperSlide.setAttribute('class', 'swiper-slide');
+      sliderWrapper.appendChild(swiperSlide);
 
-    let randomImg = document.createElement('img');
-    while (randomArray.includes(randomNumber) || parseFloat(moviesArray[randomNumber].rating) >= 6){
-      randomNumber = genRandom(0, moviesArray.length);
+      let sliderImg = document.createElement('div');
+      sliderImg.setAttribute('class', 'slider-image imgswiper2');
+      swiperSlide.appendChild(sliderImg);
+
+      let randomImg = document.createElement('img');
+      while (randomArray.includes(randomNumber) || parseFloat(moviesArray[randomNumber].rating) >= 6){
+        randomNumber = genRandom(0, moviesArray.length);
+      }
+      randomArray.push(randomNumber);
+
+      let movieData = document.createElement('div');
+      movieData.className ='movieData';
+      swiperSlide.appendChild(movieData);
+      let movieDesc = document.createElement('div');
+      movieDesc.className = 'movieDesc';
+      movieData.appendChild(movieDesc);
+
+      let movieAddToCart = document.createElement('button');
+      movieAddToCart.className = 'addtocartbtn';
+      movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+      movieData.appendChild(movieAddToCart);
+      // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+      movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+      movieDesc.textContent = moviesArray[randomNumber].description;
+
+
+      randomImg.setAttribute('src', moviesArray[randomNumber].img);
+      sliderImg.appendChild(randomImg);
     }
-    randomArray.push(randomNumber);
-
-    randomImg.setAttribute('src', moviesArray[randomNumber].img);
-    randomImg.className += `purchasable ${moviesArray[randomNumber].id}`;
-    sliderImg.appendChild(randomImg);
   }
-}
 
-topRated();
+  topRated();
+
 
 
 
@@ -237,12 +279,44 @@ function actionImgs(){
     movieCol.className = 'col-20';
     randomArray.push(randomNumber);
     actionImg.setAttribute('src', moviesArray[randomNumber].img);
-    actionImg.className += `purchasable ${moviesArray[randomNumber].id}`;
+    // actionImg.className += `purchasable ${moviesArray[randomNumber].id}`;
+
+    let movieData = document.createElement('div');
+    movieData.className ='cardData';
+
+    let movieAddToCart = document.createElement('button');
+    movieAddToCart.className = 'addtocartbtn';
+    movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+    // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+    let h3 = document.createElement('h3');
+    h3.className = 'movietitle';
+    h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
+
+    let genre = document.createElement('h4');
+    genre.className = 'movieType';
+    genre.innerHTML = ('Type : ' + moviesArray[randomNumber].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>');
+
+    let rating = document.createElement('h4');
+    rating.className = 'movieRating';
+    rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+
+
+    movieData.appendChild(h3);
+    movieData.appendChild(genre);
+    movieData.appendChild(rating);
+    movieData.appendChild(movieAddToCart);
+
+
+    movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
 
     actionImg.setAttribute('width', 230);
     actionImg.setAttribute('height', 300);
 
     movieCol.appendChild(actionImg);
+    movieCol.appendChild(movieData);
+
 
   }
 
@@ -272,10 +346,39 @@ function comedyImgs(){
     comedyImg.setAttribute('src', moviesArray[randomNumber].img);
     comedyImg.className += `purchasable ${moviesArray[randomNumber].id}`;
 
+    let movieData = document.createElement('div');
+    movieData.className ='cardData';
+
+    let movieAddToCart = document.createElement('button');
+    movieAddToCart.className = 'addtocartbtn';
+    movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+    movieData.appendChild(movieAddToCart);
+    // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+    movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
     comedyImg.setAttribute('width', 230);
     comedyImg.setAttribute('height', 300);
 
+    let h3 = document.createElement('h3');
+    h3.className = 'movietitle';
+    h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
+
+    let genre = document.createElement('h4');
+    genre.className = 'movieType';
+    genre.innerHTML = ('Type : ' + moviesArray[randomNumber].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>');
+
+    let rating = document.createElement('h4');
+    rating.className = 'movieRating';
+    rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+
+    movieData.appendChild(h3);
+    movieData.appendChild(genre);
+    movieData.appendChild(rating);
+    movieData.appendChild(movieAddToCart);
+
     movieCol.appendChild(comedyImg);
+    movieCol.append(movieData);
 
   }
 
@@ -307,7 +410,37 @@ function dramaImgs(){
     dramaImg.setAttribute('width', 230);
     dramaImg.setAttribute('height', 300);
 
+    let movieData = document.createElement('div');
+    movieData.className ='cardData';
+
+    let movieAddToCart = document.createElement('button');
+    movieAddToCart.className = 'addtocartbtn';
+    movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
+    movieData.appendChild(movieAddToCart);
+    // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
+
+    movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    let h3 = document.createElement('h3');
+    h3.className = 'movietitle';
+    h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
+
+    let genre = document.createElement('h4');
+    genre.className = 'movieType';
+    genre.innerHTML = ('Type : ' + moviesArray[randomNumber].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>');
+
+    let rating = document.createElement('h4');
+    rating.className = 'movieRating';
+    rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+
+
+    movieData.appendChild(h3);
+    movieData.appendChild(genre);
+    movieData.appendChild(rating);
+    movieData.appendChild(movieAddToCart);
+
     movieCol.appendChild(dramaImg);
+    movieCol.append(movieData);
 
   }
 
@@ -318,7 +451,7 @@ actionImgs();
 comedyImgs();
 dramaImgs();
 
-
+}
 
 
 
@@ -344,66 +477,132 @@ let cart = new Cart([]);
 
 // Add Movies to Cart
 
-let purchasableEl = document.getElementsByClassName('purchasable');
+/* let purchasableEl = document.getElementsByClassName('purchasable');
 
 for (let i = 0 ; i < purchasableEl.length ; i++){
 
   purchasableEl[i].addEventListener('click', addToCart);
 
-}
+} */ 
 // ADD POP UP IF DUPLICATE
-function addToCart(event){
-  let selectedMovie =event.target;
-  console.log(typeof(selectedMovie));
+console.log(localStorage.cart);
 
-  let specificSelect = selectedMovie.className.split(' ')[1];
-  console.log(specificSelect);
-  cart.allMovies.push(specificSelect);
-  cart.saveCart();
-  console.log(cart);
+let strCart = localStorage.getItem('cart') || [];
+let objCart = JSON.parse(strCart);
 
+let sum = 0;
+let cartSum = document.getElementById('cartSum');
+if(objCart.length > 0){
+sum = objCart.length;
+
+  cartSum.innerHTML = sum;
 }
 
+for(let i=0; i<objCart.length; i++){
+  cart.allMovies.push(objCart[i]);
+}
+
+
+console.log('All : ' + cart.allMovies);
+function addToCart(id){
+  //let selectedMovie =event.target;
+  //console.log(typeof(selectedMovie));
+
+  //let specificSelect = selectedMovie.className.split(' ')[2];
+  let specificSelect =id;
+
+  if(cart.allMovies.includes(specificSelect)){
+    console.log('already exists');
+    setTimeout(myFunction2(),1000);
+
+  } else {
+
+    console.log('new');
+    console.log(specificSelect);
+    cart.allMovies.push(specificSelect);
+    cart.saveCart();
+    console.log(cart);
+    setTimeout(myFunction(),1000);
+    document.getElementById('cartSum').textContent = cart.allMovies.length;
+
+
+  }
+
+  
+
+  
+  
+}
+
+function myFunction() { 
+  document.getElementById("myDialog").showModal();
+  setTimeout(wait,2000);
+} 
+
+function myFunction2() { 
+  document.getElementById("myDialog2").showModal();
+  setTimeout(wait2,2000);
+} 
+
+
+function wait()
+{
+  document.getElementById("myDialog").close();
+}
+
+
+function wait2()
+{
+  document.getElementById("myDialog2").close();
+}
 console.log(cart);
 
 
 
 
 
-/* swiper start */
-var swiper = new Swiper( '.swiper-container.two', {
-  autoplay: 2500,
-  effect: 'coverflow',
-  loop: false,
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  initialSlide : 8,
-  coverflow: {
-    rotate: 0,
-    stretch: 100,
-    depth: 150,
-    modifier: 1.5,
-    slideShadows : false,
+if(page == 'index.html'){
+
+  /* swiper start */
+  var swiper = new Swiper( '.swiper-container.two', {
+    autoplay: 2500,
+    effect: 'coverflow',
+    loop: false,
+    disableOnInteraction: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    initialSlide : 8,
+    coverflow: {
+      rotate: 0,
+      stretch: 100,
+      depth: 150,
+      modifier: 1.5,
+      slideShadows : false,
 
 
 
-  }
-} );
+    }
+  } );
 
-var swiper2 = new Swiper( '.ratedslider', {
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: '7',
-  effect: 'coverflow',
-  coverflow: {
-    rotate: 0,
-    stretch: 0,
-    depth: 0,
-    modifier: 1.5,
-    slideShadows : false,
-  }
+  var swiper2 = new Swiper( '.ratedslider', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: '7',
+    effect: 'coverflow',
+    coverflow: {
+      rotate: 0,
+      stretch: 0,
+      depth: 0,
+      modifier: 1.5,
+      slideShadows : false,
+    }
 
-} );
+  } );
 
 
-/* swiper end */
+  /* swiper end */
+
+
+  
+}
+
