@@ -29,9 +29,7 @@ function actionImgs(){
     randomArray.push(randomNumber);
     actionImg.setAttribute('src', moviesArray[randomNumber].img);
 
-    //actionImg.setAttribute('width', 230);
-    //actionImg.setAttribute('height', 300);
-
+    actionImg.setAttribute('onclick','prepareSwitch(' + moviesArray[randomNumber].id + ')');
 
     let movieData = document.createElement('div');
     movieData.className ='cardData';
@@ -42,7 +40,19 @@ function actionImgs(){
     movieData.appendChild(movieAddToCart);
     // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
 
+    //Add to Fav
+    let movieAddToFav = document.createElement('button');
+    movieAddToFav.className = 'addtofavbtn';
+    movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+    movieData.appendChild(movieAddToFav);
+
     movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    movieAddToFav.setAttribute('onclick','addToFav(' + moviesArray[randomNumber].id + ')');
+
+
+
+
 
     let h3 = document.createElement('h3');
     h3.className = 'movietitle';
@@ -94,8 +104,8 @@ function comedyImgs(){
     randomArray.push(randomNumber);
     comedyImg.setAttribute('src', moviesArray[randomNumber].img);
 
-    comedyImg.setAttribute('width', 230);
-    comedyImg.setAttribute('height', 300);
+    comedyImg.setAttribute('onclick','prepareSwitch(' + moviesArray[randomNumber].id + ')');
+
 
     let movieData = document.createElement('div');
     movieData.className ='cardData';
@@ -106,7 +116,18 @@ function comedyImgs(){
     movieData.appendChild(movieAddToCart);
     // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
 
+    //Add to Fav
+    let movieAddToFav = document.createElement('button');
+    movieAddToFav.className = 'addtofavbtn';
+    movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+    movieData.appendChild(movieAddToFav);
+
     movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    movieAddToFav.setAttribute('onclick','addToFav(' + moviesArray[randomNumber].id + ')');
+
+
+
 
     let h3 = document.createElement('h3');
     h3.className = 'movietitle';
@@ -159,8 +180,8 @@ function dramaImgs(){
     randomArray.push(randomNumber);
     dramaImg.setAttribute('src', moviesArray[randomNumber].img);
 
-    dramaImg.setAttribute('width', 230);
-    dramaImg.setAttribute('height', 300);
+    dramaImg.setAttribute('onclick','prepareSwitch(' + moviesArray[randomNumber].id + ')');
+
 
     let movieData = document.createElement('div');
     movieData.className ='cardData';
@@ -171,7 +192,17 @@ function dramaImgs(){
     movieData.appendChild(movieAddToCart);
     // movieAddToCart.className += ` purchasable ${moviesArray[randomNumber].id}`;
 
+    //Add to Fav
+    let movieAddToFav = document.createElement('button');
+    movieAddToFav.className = 'addtofavbtn';
+    movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+    movieData.appendChild(movieAddToFav);
+
     movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
+
+    movieAddToFav.setAttribute('onclick','addToFav(' + moviesArray[randomNumber].id + ')');
+
+
 
     let h3 = document.createElement('h3');
     h3.className = 'movietitle';

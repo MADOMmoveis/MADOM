@@ -71,7 +71,7 @@ function populateCart(){
     removeBtn.innerHTML= '<i class="fa fa-close">';
     removeBtn.className='removecart';
     removeBtn.setAttribute('id', [i]);
-    removeBtn.addEventListener('click', removeMovie)
+    removeBtn.addEventListener('click', removeMovie);
     tdBtn.appendChild(removeBtn);
 
 
