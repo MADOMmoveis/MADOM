@@ -8,12 +8,13 @@ body {
     background-size: cover;
 }
 #container {
-    width: auto;
+    width:  75%;
     height: auto;
     margin-top: 16px;
     -webkit-perspective: 800px;
-            perspective: 800px;
+    perspective: 800px;
     text-align: center;
+    margin-left: 12.5%;
 }
 #container h1 {
     color: #ECF6CE;
@@ -49,19 +50,17 @@ body {
 }
 .front {
     transform: rotateY(0deg);
-    background: -webkit-linear-gradient(top left, #d50055, #d50055);
     background: linear-gradient(to bottom right, #131722, #3a3a3b);
     text-align: center;
     padding: 30px;
 }
 .back {
-    background: -webkit-linear-gradient(top left, #d50055, #d50055);
     background: linear-gradient(to bottom right, #131722, #3a3a3b);
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
     padding: 40px 15px;
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     padding: 6px;
     padding-top: 100px;
 
@@ -85,12 +84,12 @@ body {
 }
 .front .name {
     display: inline-block;
-    font-size: 27px;
+    font-size: 18px;
     color: #fff;
 }
 .front .job {
     color: #fff;
-    font-size: 22px;
+    font-size: 15px;
 }
 .front hr {
     border: none;
