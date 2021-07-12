@@ -5,12 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
+
+    <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
    <header></header>
    <main>
+
+      <!-- FAV DIALOGS -->
+      <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog3">
+        <i class="fa fa-check-circle"></i>
+        Movie has been added to your favorite !
+    </dialog>
+
+    <dialog style="color: firebrick; text-align: center; font-size: 18px;" id="myDialog4">
+        <i class="fa fa-close"></i>
+        This movie is already added to favorite !
+    </dialog>
+
+    <dialog style="color: #d50055; text-align: center; font-size: 18px;" id="myDialog5">
+    </dialog>
+
+    
        <div id="filmDiv"></div>
+       <h1></h1>
    </main> 
    <footer></footer>
+
+
+   <script src="js/app.js"></script>
+   <script src="js/moviefilm.js"></script>
+   <script>
+       /*preloader*/
+    var load = document.getElementById('loading');
+    function loadfun2()
+    {
+    
+
+    setTimeout(function () {
+        load.style.display = 'none';
+    }, 3000);
+    }
+
+   </script>
 </body>
 </html>

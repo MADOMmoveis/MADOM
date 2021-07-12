@@ -38,7 +38,19 @@
         This movie is already added to cart !
     </dialog>
 
+  <!-- FAV DIALOGS -->
+        <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog3">
+            <i class="fa fa-check-circle"></i>
+            Movie has been added to your favorite !
+        </dialog>
 
+        <dialog style="color: firebrick; text-align: center; font-size: 18px;" id="myDialog4">
+            <i class="fa fa-close"></i>
+            This movie is already added to favorite !
+        </dialog>
+
+        <dialog style="color: #d50055; text-align: center; font-size: 18px;" id="myDialog5">
+        </dialog>
 
     <header>
         <nav class="navbar">
@@ -61,7 +73,7 @@
                     </li>
                 </span>
                 <li class="navlistitem right">
-                    <a href="#"><i class="fas fa-heart icon"></i></a>
+                    <a id="favButton"><i class="fas fa-heart icon"></i> <span id="favtSum"></span></a>
                 </li>
                 <li class="navlistitem right">
                     <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> <span id="cartSum"></span> </a>
