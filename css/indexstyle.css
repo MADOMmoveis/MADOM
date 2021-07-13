@@ -115,14 +115,14 @@ body{
 }
 td,th{
     color:rgb(0, 0, 0);
-    border:1px solid #3c3c3c;
+    border:1px solid #2C2E43;
     text-align:center;
     padding:10px;
     vertical-align: middle;
 }
 
 th{
-    background-color: #c70839;
+    background-color: #2C2E43;
     color:white;
 }
 table{
@@ -153,7 +153,7 @@ fieldset {
   }
   
   legend {
-    background-color: #c70839;
+    background-color: #2C2E43;
     color: white;
     padding: 10px 10px;
     border-radius: 5px;
@@ -1219,7 +1219,7 @@ button.swiper-pagination-bullet {
     #paymentMethods{
         text-align:right;
 
-        margin-right: 61px;
+        margin-right: 67px;
 
         color: grey;
         margin-top:-107px;;
@@ -1250,7 +1250,7 @@ button.swiper-pagination-bullet {
         display: flex;
         float: left;
 
-        margin-left: 45%;
+        margin-left: 44%;
         margin-top: -94px;
 
     }
@@ -1469,3 +1469,4 @@ footer{
    margin-top:-5px;
     
 }
+
