@@ -13,7 +13,7 @@ let favorite = [];
 
 
 //EDIT >> ADD PRICE
-function Movie(id, img, movieName, genre, rating,price1){
+function Movie(id, img, movieName, genre, rating,price){
   this.img = img;
   this.movieName = movieName;
   this.rating= rating;
@@ -21,7 +21,7 @@ function Movie(id, img, movieName, genre, rating,price1){
   this.fav;
   this.description;
   this.id = id;
-  this.price1=price1;
+  this.price=price;
 
   moviesArray.push(this);
 
@@ -339,14 +339,14 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-      let Price=document.createElement('h5')
-      Price.className='moviePrice';
-      Price.textContent=`Price${moviesArray[randomNumber].price1}`;
+      let priceTag=document.createElement('h5');
+      priceTag.className='moviePrice';
+      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
       movieData.appendChild(rating);
-      movieData.appendChild(Price);
+      movieData.appendChild(priceTag);
 
       movieData.appendChild(movieAddToCart);
 
@@ -432,16 +432,16 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-      
-      let Price=document.createElement('h4')
-      Price.className='moviePrice';
-      Price.textContent=`Price${moviesArray[randomNumber].price1}`;
+
+      let priceTag=document.createElement('h4');
+      priceTag.className='moviePrice';
+      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
 
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
       movieData.appendChild(rating);
-      movieData.appendChild(Price);
+      movieData.appendChild(priceTag);
 
       movieData.appendChild(movieAddToCart);
 
@@ -516,16 +516,16 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-      
-      let Price=document.createElement('h4')
-      Price.className='moviePrice';
-      Price.textContent=`Price${moviesArray[randomNumber].price1}`;
+
+      let priceTag=document.createElement('h4');
+      priceTag.className='moviePrice';
+      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
 
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
       movieData.appendChild(rating);
-      movieData.appendChild(Price);
+      movieData.appendChild(priceTag);
 
       movieData.appendChild(movieAddToCart);
 
@@ -577,7 +577,7 @@ for (let i = 0 ; i < purchasableEl.length ; i++){
 // ADD POP UP IF DUPLICATE
 console.log(localStorage.cart);
 
-if(typeof localStorage.cart != 'undefined'){
+if(typeof localStorage.cart !== 'undefined'){
 
   let strCart = localStorage.getItem('cart') || [];
   let objCart = JSON.parse(strCart);
@@ -756,91 +756,91 @@ function storeClick(id){
 
 // Populate Fav Pop up
 
-  let favButtonEl = document.getElementById('favButton');
-  favButtonEl.setAttribute('onclick','listFav()');
+let favButtonEl = document.getElementById('favButton');
+favButtonEl.setAttribute('onclick','listFav()');
 
 
-  function listFav(){
+function listFav(){
 
-    let favDialog = document.getElementById('myDialog5');
-    favDialog.style.display = '';
-    favDialog.textContent = '';
+  let favDialog = document.getElementById('myDialog5');
+  favDialog.style.display = '';
+  favDialog.textContent = '';
 
-    let strFav = localStorage.getItem('favorite') || [];
-    let objFav = JSON.parse(strFav);
-    favorite = objFav;
+  let strFav = localStorage.getItem('favorite') || [];
+  let objFav = JSON.parse(strFav);
+  favorite = objFav;
 
-    favDialog.innerHTML = '<i class="fas fa-heart icon"></i>';
+  favDialog.innerHTML = '<i class="fas fa-heart icon"></i>';
 
-    let ulEl = document.createElement('ul');
-    favDialog.appendChild(ulEl);
+  let ulEl = document.createElement('ul');
+  favDialog.appendChild(ulEl);
 
-    let closeButton = document.createElement('button');
-    closeButton.innerHTML = '<i class="fa fa-close"></i>';
-    closeButton.setAttribute('onclick', 'closeModal()');
-    favDialog.appendChild(closeButton);
-
-
-    for (let i = 0; i < objFav.length; i++){
-      let liEl = document.createElement('li');
-      let counter = objFav[i];
-      liEl.textContent = moviesArray[counter].movieName;
+  let closeButton = document.createElement('button');
+  closeButton.innerHTML = '<i class="fa fa-close"></i>';
+  closeButton.setAttribute('onclick', 'closeModal()');
+  favDialog.appendChild(closeButton);
 
 
+  for (let i = 0; i < objFav.length; i++){
+    let liEl = document.createElement('li');
+    let counter = objFav[i];
+    liEl.textContent = moviesArray[counter].movieName;
 
 
-      let removeBtn = document.createElement('button');
-      removeBtn.innerHTML= '<i class="fa fa-close">';
-      removeBtn.className='removefav';
-      removeBtn.setAttribute('id', [i]);
-      removeBtn.addEventListener('click', removeFav);
-      liEl.appendChild(removeBtn);
-
-      ulEl.appendChild(liEl);
-    }
-
-    // NEEDS EDIT : ONLY IF MODAL IS CLOSED
-
-    if(favDialog.open) {
-      null;
-    } else {
-      document.getElementById('myDialog5').showModal();
-
-    }
 
 
+    let removeBtn = document.createElement('button');
+    removeBtn.innerHTML= '<i class="fa fa-close">';
+    removeBtn.className='removefav';
+    removeBtn.setAttribute('id', [i]);
+    removeBtn.addEventListener('click', removeFav);
+    liEl.appendChild(removeBtn);
+
+    ulEl.appendChild(liEl);
+  }
+
+  // NEEDS EDIT : ONLY IF MODAL IS CLOSED
+
+  if(favDialog.open) {
+    null;
+  } else {
+    document.getElementById('myDialog5').showModal();
 
   }
 
 
-  function closeModal(){
-    let favDialog = document.getElementById('myDialog5');
-    favDialog.style.display = 'none';
-  }
 
-  // Remove Items From Fav
-
-  function removeFav(event){
-
-    let strFav = localStorage.getItem('favorite') || [];
-    let objFav = JSON.parse(strFav);
-
-    let buttonID = parseInt(event.target.id);
+}
 
 
-    let updateFav = favorite.splice(buttonID,1);
+function closeModal(){
+  let favDialog = document.getElementById('myDialog5');
+  favDialog.style.display = 'none';
+}
+
+// Remove Items From Fav
+
+function removeFav(event){
+
+  let strFav = localStorage.getItem('favorite') || [];
+  let objFav = JSON.parse(strFav);
+
+  let buttonID = parseInt(event.target.id);
 
 
-    let updatedFav = JSON.stringify(favorite);
-    localStorage.setItem('favorite', updatedFav);
+  let updateFav = favorite.splice(buttonID,1);
 
-    retrieveFav();
-    closeModal();
-    listFav();
-  }
 
-  function retrieveFav(){
-    let strFav = localStorage.getItem('favorite') || [];
-    let objFav = JSON.parse(strFav);
-  }
+  let updatedFav = JSON.stringify(favorite);
+  localStorage.setItem('favorite', updatedFav);
+
+  retrieveFav();
+  closeModal();
+  listFav();
+}
+
+function retrieveFav(){
+  let strFav = localStorage.getItem('favorite') || [];
+  let objFav = JSON.parse(strFav);
+}
 
