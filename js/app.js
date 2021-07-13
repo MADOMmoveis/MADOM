@@ -342,7 +342,7 @@ if(page == 'index.html'){
      
       let priceTag=document.createElement('h5');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
 
 
       movieData.appendChild(h3);
@@ -438,7 +438,7 @@ if(page == 'index.html'){
 
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
 
       
 
@@ -526,7 +526,7 @@ if(page == 'index.html'){
 
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
 
 
 

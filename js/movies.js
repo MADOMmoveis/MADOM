@@ -67,7 +67,7 @@ function actionImgs(){
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
     let priceTag=document.createElement('h5')
     priceTag.className='moviePrice';
-    priceTag.textContent=`Price:${moviesArray[randomNumber].price}`;
+    priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
     movieData.appendChild(h3);
@@ -150,7 +150,7 @@ function comedyImgs(){
     
     let priceTag=document.createElement('h5')
     priceTag.className='moviePrice';
-    priceTag.textContent=`Price:${moviesArray[randomNumber].price}`;
+    priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
     movieData.appendChild(h3);
@@ -232,7 +232,7 @@ function dramaImgs(){
 
     let priceTag=document.createElement('h5')
     priceTag.className='moviePrice';
-    priceTag.textContent=`Price:${moviesArray[randomNumber].price}`;
+    priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
 
