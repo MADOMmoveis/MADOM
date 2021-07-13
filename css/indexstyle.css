@@ -1093,7 +1093,7 @@ button.swiper-pagination-bullet {
     
     #paymentMethods{
         text-align:right;
-        margin-right:40px;
+        margin-right: 61px;
         color: grey;
         margin-top:-129px;;
     }
@@ -1122,7 +1122,7 @@ button.swiper-pagination-bullet {
     #copy img{
         display: flex;
         float: left;
-        margin-left: 45%;
+        margin-left: 44%;
         margin-top: -118px;
     }
 
@@ -1150,7 +1150,7 @@ button.swiper-pagination-bullet {
     } */
 
 #socialMedia p{
-    margin-right: 629px;
+    margin-right: 643px;
     padding-top:-25px;
     
 }
