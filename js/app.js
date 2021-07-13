@@ -793,7 +793,7 @@ function listFav(){
   for (let i = 0; i < objFav.length; i++){
     let liEl = document.createElement('li');
     let counter = objFav[i];
-    liEl.innerHTML = `<a onclick="prepareSwitch(${moviesArray[counter].id})"> ${moviesArray[counter].movieName} </a>`;
+    liEl.innerHTML = `<a class="filmPage" onclick="prepareSwitch(${moviesArray[counter].id})"> ${moviesArray[counter].movieName} </a>`;
 
 
 

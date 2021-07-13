@@ -205,6 +205,14 @@ fieldset {
 
 /* MHD EDITS */
 
+.filmPage{
+    cursor: pointer;
+}
+
+.col-20 img{
+    cursor: pointer;
+}
+
 .addtofavbtn-slider{
     position: absolute;
     top: 15%;
