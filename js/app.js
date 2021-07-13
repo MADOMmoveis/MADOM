@@ -342,7 +342,7 @@ if(page == 'index.html'){
      
       let priceTag=document.createElement('h5');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
 
 
       movieData.appendChild(h3);
@@ -438,7 +438,7 @@ if(page == 'index.html'){
 
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
 
       
 
@@ -526,7 +526,7 @@ if(page == 'index.html'){
 
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
 
 
 
@@ -582,6 +582,7 @@ for (let i = 0 ; i < purchasableEl.length ; i++){
   purchasableEl[i].addEventListener('click', addToCart);
 
 } */
+
 // ADD POP UP IF DUPLICATE
 console.log(localStorage.cart);
 
@@ -792,7 +793,7 @@ function listFav(){
   for (let i = 0; i < objFav.length; i++){
     let liEl = document.createElement('li');
     let counter = objFav[i];
-    liEl.textContent = moviesArray[counter].movieName;
+    liEl.innerHTML = `<a onclick="prepareSwitch(${moviesArray[counter].id})"> ${moviesArray[counter].movieName} </a>`;
 
 
 

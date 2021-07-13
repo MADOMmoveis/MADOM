@@ -65,15 +65,15 @@ function actionImgs(){
     let rating = document.createElement('h4');
     rating.className = 'movieRating';
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-    let Price=document.createElement('h5')
-    Price.className='moviePrice';
-    Price.textContent=`Price:${moviesArray[randomNumber].price1}`;
+    let priceTag=document.createElement('h5')
+    priceTag.className='moviePrice';
+    priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
     movieData.appendChild(h3);
     movieData.appendChild(genre);
     movieData.appendChild(rating);
-    movieData.appendChild(Price);
+    movieData.appendChild(priceTag);
 
     movieData.appendChild(movieAddToCart);
 
@@ -148,15 +148,15 @@ function comedyImgs(){
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
     
     
-    let Price=document.createElement('h5')
-    Price.className='moviePrice';
-    Price.textContent=`Price:${moviesArray[randomNumber].price1}`;
+    let priceTag=document.createElement('h5')
+    priceTag.className='moviePrice';
+    priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
     movieData.appendChild(h3);
     movieData.appendChild(genre);
     movieData.appendChild(rating);
-    movieData.appendChild(Price);
+    movieData.appendChild(priceTag);
 
     movieData.appendChild(movieAddToCart);
 
@@ -230,17 +230,17 @@ function dramaImgs(){
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
 
 
-    let Price=document.createElement('h5')
-    Price.className='moviePrice';
-    Price.textContent=`Price:${moviesArray[randomNumber].price1}`;
+    let priceTag=document.createElement('h5')
+    priceTag.className='moviePrice';
+    priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
 
     movieData.appendChild(h3);
     movieData.appendChild(genre);
     movieData.appendChild(rating);
-    movieData.appendChild(Price);
-        movieData.appendChild(Price);
+    movieData.appendChild(priceTag);
+        movieData.appendChild(priceTag);
 
     movieData.appendChild(movieAddToCart);
 
