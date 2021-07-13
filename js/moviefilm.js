@@ -76,10 +76,10 @@ function renderMovie(objId){
   cartDiv.setAttribute('id', 'filmCartDiv');
   filmDivEl.appendChild(cartDiv);
 
-  // let moviePrice = document.createElement('p');
-  // moviePrice.setAttribute('id', 'moviePrice');
-  // moviePrice.textContent = 'Price: ' + moviesArray[specificSelect].price;
-  // cartDiv.appendChild(moviePrice);
+  let moviePrice = document.createElement('p');
+  moviePrice.setAttribute('id', 'moviePrice');
+  moviePrice.textContent = 'Price: ' + moviesArray[specificSelect].price;
+  cartDiv.appendChild(moviePrice);
 
 
   let movieAddToCart = document.createElement('button');

@@ -19,42 +19,57 @@
 </head>
 
 <body>
-    <header>
-        <!-- UNIQUE FOR EACH PAGE -->
-        <nav class="navbar">
-            <ul class="navlist">
-                <li class="logo">
-                    <a href="index.html"><img class="logoimg" src="img/logo_MADOM.png"></a>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="logo">
+                <a href="index.html"><img class="logoimg" src="img/logo_MADOM.png"></a>
+            </li>
+            <span class="navmid ">
+                <li class="navlistitem">
+                    <a class="activeli" href="index.html"> <i class="fa fa-home"></i> Home</a>
                 </li>
-                <span class="navmid ">
-                    <li class="navlistitem">
-                        <a class="activeli" href="index.html"> <i class="fa fa-home"></i> Home</a>
-                    </li>
-                    <li class="navlistitem">
-                        <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
-                    </li>
-                    <li class="navlistitem">
-                        <a href="packages.html"><i class="fa fa-list-alt"></i> Packages</a>
-                    </li>
-                    <li class="navlistitem">
-                        <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
-                    </li>
-                </span>
-                <li class="navlistitem right">
-                    <a id="favButton"><i class="fas fa-heart icon"></i> <span id="favtSum"></span></a>
+                <li class="navlistitem">
+                    <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
                 </li>
-                <li class="navlistitem right">
-                    <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> <span id="cartSum"></span> </a>
+                <!-- <li class="navlistitem">
+                    <a href="packages.html"><i class="fa fa-list-alt"></i> Packages</a>
+                </li> -->
+                <li class="navlistitem">
+                    <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
                 </li>
-                <li class="navlistitem right">
-                    <a href="#"><i class="fas fa-search icon"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+            </span>
+            <li class="navlistitem right">
+                <a id="favButton"><i class="fas fa-heart icon"></i> <span id="favtSum"></span></a>
+            </li>
+            <li class="navlistitem right">
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> <span id="cartSum"></span> </a>
+            </li>
+            <li class="navlistitem right">
+                <a href="#"><i class="fas fa-search icon"></i></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
     <main>
 
+
+
+        <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog">
+            <i class="fa fa-check-circle"></i>
+            Movie has been added to cart !
+        </dialog>
+
+        <dialog style="color: firebrick; text-align: center; font-size: 18px;" id="myDialog2">
+            <i class="fa fa-close"></i>
+            This movie is already added to cart !
+        </dialog>
+        
         <!-- FAV DIALOGS -->
+
+        
+
         <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog3">
             <i class="fa fa-check-circle"></i>
             Movie has been added to your favorite !

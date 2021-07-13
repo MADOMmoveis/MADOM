@@ -70,12 +70,12 @@ function populateCart(){
     tdName.textContent = moviesArray[matched].movieName;
     rowEl.appendChild(tdName);
     let priceTag=document.createElement('td');
-    priceTag.textContent=`${ moviesArray[matched].price}`
+    priceTag.textContent=`${ moviesArray[matched].price}`;
     rowEl.appendChild(priceTag);
 
     let tdBtn = document.createElement('td');
     rowEl.appendChild(tdBtn);
-    
+
 
 
     let removeBtn = document.createElement('button');
@@ -87,9 +87,9 @@ function populateCart(){
 
 
 
-    
 
-    
+
+
 
     // let tdPrice = document.createElement('td');
     // tdPrice.textContent = moviesArray[matched].price;
@@ -121,6 +121,12 @@ function removeMovie(event){
 
   let updateCart = objCart.splice(buttonID,1);
 
+  let cartSum = document.getElementById('cartSum');
+  if(objCart.length >= 0){
+    let sum = objCart.length;
+
+    cartSum.innerHTML = sum;
+  }
 
   let updatedCart = JSON.stringify(objCart);
   localStorage.setItem('cart', updatedCart);
