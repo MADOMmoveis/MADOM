@@ -203,10 +203,51 @@ fieldset {
     background-color: #92072a;
   }
 
+/* MHD EDITS */
+
+.filmPage{
+    cursor: pointer;
+}
+
+.col-20 img{
+    cursor: pointer;
+}
+
+.addtofavbtn-slider{
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    background-color: transparent;
+    border: none;
+}
+
+.addtofavbtn-slidera .icon{
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid 1px  rgba(199 , 8, 57, 0.2);
+
+  border: none;
+}
+
+.addtofavbtn-slider .icon:hover{
+  background-color: rgba(199 , 8, 57, 0.7);
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  transition: 300ms;
+}
+
+.addtofavbtn-slider .icon:active{
+  background-color: rgba(199 , 8, 57, 0.7);
+  transform: scale(1.2);
+  transition: 300ms;
+  border: none;
+}
+
+
+
   .col-20 {
     float: left;
     width: 20%;
     margin-top: 6px;
+    position: relative;
   }
 
   .col-20 img{
@@ -219,6 +260,68 @@ fieldset {
       transition: .5s ease;
       backface-visibility: hidden;
   }
+
+  .col-20 .addtofavbtn{
+      position: absolute;
+      top: 4%;
+      left: 4%;
+      background-color: transparent;
+      border: none;
+  }
+
+  .col-20 .icon{
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid 1px  rgba(199 , 8, 57, 0.2);
+
+    border: none;
+  }
+
+  .col-20 .icon:hover{
+    background-color: rgba(199 , 8, 57, 0.7);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    transition: 300ms;
+  }
+
+  .col-20 .icon:active{
+    background-color: rgba(199 , 8, 57, 0.7);
+    transform: scale(1.3);
+    transition: 300ms;
+    border: none;
+  }
+
+
+  .addtofavbtn-rated{
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    background-color: transparent;
+    border: none;
+}
+
+.addtofavbtn-rated .icon{
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid 1px  rgba(199 , 8, 57, 0.2);
+
+  border: none;
+}
+
+.addtofavbtn-rated .icon:hover{
+  background-color: rgba(199 , 8, 57, 0.7);
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  transition: 300ms;
+}
+
+  .addtofavbtn-rated .icon:active{
+  background-color: rgba(199 , 8, 57, 0.7);
+  transform: scale(1.2);
+  transition: 300ms;
+  border: none;
+}
+
+
+  /* /MHD EDITS */
+
+
 
   .col-25 {
     float: left;
@@ -873,7 +976,7 @@ button.swiper-pagination-bullet {
 }
 
 .imgswiper2 img {
-    height: 300px!important;
+    height:250px!important;
 }
 
 .swiper-slide .slider-image .preview-icon {
@@ -910,6 +1013,18 @@ button.swiper-pagination-bullet {
     text-align: center;
     padding-top: 50%;
     font-size: 13px;
+}
+
+
+.movieDesc{
+    padding: 5%;
+    font-size: 18px;
+    line-height: 1.2em;
+}
+
+.movieDesc-rated{
+    font-size: 12px;
+    line-height: 1.2em;
 }
 
 .slider-image img:hover{
@@ -965,9 +1080,16 @@ button.swiper-pagination-bullet {
    padding: 3px;
    border-radius: 5px 5px 0 0;
    }
+
+   /* #comedyCategory , #dramaCategory, #actionCategory{
+       display: block; */
+   /* } */
+   
 #comedyCategory , #dramaCategory {
     padding-top: 30%;
     margin-top: 5%;
+    /* margin-top: 10%; */
+
 }
 
 #comedyCategory hr, #dramaCategory hr, #actionCategory hr{
@@ -1217,6 +1339,12 @@ button.swiper-pagination-bullet {
 
 }
 
+.addtocartbtn:active{
+    background-color: white;
+    color: #c70839;
+    transition: 500ms;
+}
+
 .col-20 img{
     border-top: 1px solid #535353;
     border-left: 1px solid #535353;
@@ -1245,6 +1373,13 @@ button.swiper-pagination-bullet {
 .movieType, .movieRating{
     font-size: 12px;
     color: #565656;
+}
+
+.moviePrice{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .cartimg{
@@ -1331,4 +1466,3 @@ footer{
    margin-top:-5px;
     
 }
-
