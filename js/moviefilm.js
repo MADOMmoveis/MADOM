@@ -84,6 +84,7 @@ function renderMovie(objId){
 
   let movieAddToCart = document.createElement('button');
   movieAddToCart.className = 'addtocartbtn';
+  movieAddToCart.setAttribute('id', 'divAddToCartBtn');
   movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
   cartDiv.appendChild(movieAddToCart);
 
@@ -92,6 +93,7 @@ function renderMovie(objId){
 
   let movieFav = document.createElement('button');
   movieFav.className = 'addtofavbtn';
+  movieFav.setAttribute('id', 'divAddToFavBtn');
   movieFav.innerHTML = '<i class="fas fa-heart icon"></i>';
   cartDiv.appendChild(movieFav);
 
