@@ -197,7 +197,7 @@ if(page == 'index.html'){
 
       //Add to Fav
       let movieAddToFav = document.createElement('button');
-      movieAddToFav.className = 'addtofavbtn';
+      movieAddToFav.className = 'addtofavbtn-slider';
       movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
       movieData.appendChild(movieAddToFav);
 
@@ -250,7 +250,7 @@ if(page == 'index.html'){
       movieData.className ='movieData';
       swiperSlide.appendChild(movieData);
       let movieDesc = document.createElement('div');
-      movieDesc.className = 'movieDesc';
+      movieDesc.className = 'movieDesc-rated';
       movieData.appendChild(movieDesc);
 
       let movieAddToCart = document.createElement('button');
@@ -261,7 +261,7 @@ if(page == 'index.html'){
 
       //Add to Fav
       let movieAddToFav = document.createElement('button');
-      movieAddToFav.className = 'addtofavbtn';
+      movieAddToFav.className = 'addtofavbtn-rated';
       movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
       movieData.appendChild(movieAddToFav);
 
@@ -325,7 +325,7 @@ if(page == 'index.html'){
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn';
       movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
-      movieData.appendChild(movieAddToFav);
+      movieCol.appendChild(movieAddToFav);
 
 
       let h3 = document.createElement('h3');
@@ -340,9 +340,9 @@ if(page == 'index.html'){
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
      
-      let priceTag=document.createElement('h5');
+      let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
       movieData.appendChild(h3);
@@ -438,7 +438,7 @@ if(page == 'index.html'){
 
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
       
 
@@ -526,7 +526,7 @@ if(page == 'index.html'){
 
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
-      priceTag.textContent=`Price ${moviesArray[randomNumber].price}`;
+      priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
 
 
