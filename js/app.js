@@ -339,9 +339,11 @@ if(page == 'index.html'){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+     
       let priceTag=document.createElement('h5');
       priceTag.className='moviePrice';
       priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+
 
       movieData.appendChild(h3);
       movieData.appendChild(genre);
@@ -433,9 +435,13 @@ if(page == 'index.html'){
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
 
+
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
       priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+
+      
+
 
 
       movieData.appendChild(h3);
@@ -517,9 +523,11 @@ if(page == 'index.html'){
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
 
+
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
       priceTag.textContent=`Price${moviesArray[randomNumber].price}`;
+
 
 
       movieData.appendChild(h3);
