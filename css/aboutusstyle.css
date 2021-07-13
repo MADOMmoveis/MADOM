@@ -39,7 +39,7 @@ body {
     height: 100%;
     position: absolute;
     -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-transition: -webkit-transform 300ms;
     transition: -webkit-transform 300ms;
     transition: transform 300ms;
@@ -57,12 +57,13 @@ body {
 .back {
     background: linear-gradient(to bottom right, #131722, #3a3a3b);
     -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
     padding: 40px 15px;
     color: #fff;
     font-size: 18px;
     padding: 6px;
     padding-top: 100px;
+    letter-spacing: 1px;
 
 }
 .card:hover .front {
@@ -81,6 +82,7 @@ body {
     border-radius: 50%;
     display: inline-block;
     margin-bottom: 10px;
+    font-kerning: normal;
 }
 .front .name {
     display: inline-block;
