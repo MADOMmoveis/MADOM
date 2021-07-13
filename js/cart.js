@@ -54,7 +54,7 @@ function populateCart(){
 
 
 
-   
+
 
     let tdImg = document.createElement('td');
     let movieImg = document.createElement('img');
@@ -83,7 +83,7 @@ function populateCart(){
     removeBtn.addEventListener('click', removeMovie);
     tdBtn.appendChild(removeBtn);
 
-   
+
 
 
 
@@ -108,6 +108,24 @@ function populateCart(){
 
 }
 populateCart();
+
+let submit = document.querySelector('#submit');
+
+submit.addEventListener('click', function (e) {
+  e.preventDefault();
+  // Hide first view
+  document.getElementById('forminputs').style.display = 'none';
+
+  // Show thank you message element
+  document.getElementById('thank_you').style.display = 'block';
+  let carrt=[];
+  localStorage.setItem('cart',carrt);
+  let tableRemove=document.getElementById('cartPreview');
+  tableRemove.style.display='none';
+
+
+
+});
 
 
 // Remove Items From Cart
