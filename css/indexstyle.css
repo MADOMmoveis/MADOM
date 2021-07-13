@@ -322,6 +322,20 @@ fieldset {
 }
 
 
+
+input:invalid {
+    border: 2px solid #c70839;
+  }
+  
+  input:invalid:required {
+    background-color: rgba(238, 238, 238, 0.5);
+  }
+  
+  input:valid {
+    border: 2px solid #131722;
+  }
+
+
   /* /MHD EDITS */
 
 
