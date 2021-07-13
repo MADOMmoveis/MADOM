@@ -54,9 +54,7 @@ function populateCart(){
 
 
 
-    let tdId = document.createElement('td');
-    tdId.textContent = moviesArray[matched].id;
-    rowEl.appendChild(tdId);
+   
 
     let tdImg = document.createElement('td');
     let movieImg = document.createElement('img');
@@ -85,7 +83,7 @@ function populateCart(){
     removeBtn.addEventListener('click', removeMovie);
     tdBtn.appendChild(removeBtn);
 
-
+   
 
 
 
@@ -95,6 +93,8 @@ function populateCart(){
     // tdPrice.textContent = moviesArray[matched].price;
     // rowEl.appendChild(tdPrice);
   }
+  sum= Math.round(sum * 10) / 10;
+
   let totalRw=document.createElement('tfoot');
   let totalTd=document.createElement('td');
   totalTd.textContent='Total Price';
