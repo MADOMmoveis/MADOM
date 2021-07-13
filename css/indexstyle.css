@@ -1093,9 +1093,9 @@ button.swiper-pagination-bullet {
     
     #paymentMethods{
         text-align:right;
-        margin-right:40px;
+        margin-right:78px;
         color: grey;
-        margin-top:-129px;;
+        margin-top:-107px;;
     }
   h6{
       color: #fff;
@@ -1123,7 +1123,7 @@ button.swiper-pagination-bullet {
         display: flex;
         float: left;
         margin-left: 45%;
-        margin-top: -118px;
+        margin-top: -94px;
     }
 
     section#categories{
