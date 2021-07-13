@@ -1,7 +1,7 @@
 'use strict';
 
 let strId = localStorage.getItem('id');
-let objId = JSON.parse(strId); 
+let objId = JSON.parse(strId);
 
 
 function renderMovie(objId){
@@ -11,7 +11,7 @@ function renderMovie(objId){
 
 
   let titleEl = document.getElementsByTagName('title')[0];
-  titleEl.textContent =  moviesArray[specificSelect].movieName;
+  titleEl.textContent = moviesArray[specificSelect].movieName;
 
 
 
@@ -19,9 +19,9 @@ function renderMovie(objId){
   filmDivEl.textContent= '';
 
   let titleDiv = document.createElement('div');
-  titleDiv.setAttribute('id', 'filmTitleDiv')
+  titleDiv.setAttribute('id', 'filmTitleDiv');
   filmDivEl.appendChild(titleDiv);
-  
+
 
 
   let movieTitle = document.createElement('h3');
@@ -82,31 +82,27 @@ function renderMovie(objId){
   // cartDiv.appendChild(moviePrice);
 
 
-  let movieFav = document.createElement('button');
-  movieFav.className = 'addtofavbtn';
-  movieFav.innerHTML = '<i class="fas fa-heart icon"></i>';
-  cartDiv.appendChild(movieFav);
-
-  movieFav.setAttribute('onclick','addToFav(' + moviesArray[randomNumber].id + ')');
-
-
-
   let movieAddToCart = document.createElement('button');
   movieAddToCart.className = 'addtocartbtn';
   movieAddToCart.innerHTML = '<i class="fa fa-plus"></i> Add To Cart ';
   cartDiv.appendChild(movieAddToCart);
 
+  movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[specificSelect].id + ')');
+
+
+  let movieFav = document.createElement('button');
+  movieFav.className = 'addtofavbtn';
+  movieFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+  cartDiv.appendChild(movieFav);
+
+  movieFav.setAttribute('onclick','addToFav(' + moviesArray[specificSelect].id + ')');
 
 
 
 
 
-
-
-
-  localStorage.removeItem('id');
+  // localStorage.removeItem('id');
 }
 
 renderMovie(objId);
 
-// window.onbeforeunload =

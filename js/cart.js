@@ -49,7 +49,7 @@ function populateCart(){
 
     let matched = idMatch(objCart[i]);
     console.log(typeof objCart[i]);
-    sum+=Number((moviesArray[matched].price1).split(' ')[0]);
+    sum+=Number((moviesArray[matched].price).split(' ')[0]);
     console.log(sum);
 
 
@@ -69,9 +69,9 @@ function populateCart(){
     let tdName = document.createElement('td');
     tdName.textContent = moviesArray[matched].movieName;
     rowEl.appendChild(tdName);
-    let prIce=document.createElement('td');
-    prIce.textContent=`${ moviesArray[matched].price1}`
-    rowEl.appendChild(prIce);
+    let priceTag=document.createElement('td');
+    priceTag.textContent=`${ moviesArray[matched].price}`
+    rowEl.appendChild(priceTag);
 
     let tdBtn = document.createElement('td');
     rowEl.appendChild(tdBtn);
