@@ -285,12 +285,16 @@
         <script>
             /*preloader*/
             var load = document.getElementById('loading');
-            function loadfun2() {
+
+            function loadfun2()
+            {
+            
+        
+            setTimeout(function () {
+                load.style.display = 'none';
+            }, 2000);
 
 
-                setTimeout(function () {
-                    load.style.display = 'none';
-                }, 3000);
             }
 
 
