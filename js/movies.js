@@ -65,10 +65,16 @@ function actionImgs(){
     let rating = document.createElement('h4');
     rating.className = 'movieRating';
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+    let Price=document.createElement('h5')
+    Price.className='moviePrice';
+    Price.textContent=`Price:${moviesArray[randomNumber].price1}`;
+
 
     movieData.appendChild(h3);
     movieData.appendChild(genre);
     movieData.appendChild(rating);
+    movieData.appendChild(Price);
+
     movieData.appendChild(movieAddToCart);
 
 
@@ -140,11 +146,18 @@ function comedyImgs(){
     let rating = document.createElement('h4');
     rating.className = 'movieRating';
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
+    
+    
+    let Price=document.createElement('h5')
+    Price.className='moviePrice';
+    Price.textContent=`Price:${moviesArray[randomNumber].price1}`;
 
 
     movieData.appendChild(h3);
     movieData.appendChild(genre);
     movieData.appendChild(rating);
+    movieData.appendChild(Price);
+
     movieData.appendChild(movieAddToCart);
 
     comedyCol.appendChild(comedyImg);
@@ -217,9 +230,18 @@ function dramaImgs(){
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
 
 
+    let Price=document.createElement('h5')
+    Price.className='moviePrice';
+    Price.textContent=`Price:${moviesArray[randomNumber].price1}`;
+
+
+
     movieData.appendChild(h3);
     movieData.appendChild(genre);
     movieData.appendChild(rating);
+    movieData.appendChild(Price);
+        movieData.appendChild(Price);
+
     movieData.appendChild(movieAddToCart);
 
     dramaCol.appendChild(dramaImg);
