@@ -19,50 +19,66 @@ function renderMovie(objId){
   filmDivEl.textContent= '';
 
   let titleDiv = document.createElement('div');
+  titleDiv.setAttribute('id', 'filmTitleDiv')
   filmDivEl.appendChild(titleDiv);
+  
+
 
   let movieTitle = document.createElement('h3');
-  movieTitle.textContent = moviesArray[specificSelect].movieName;
+  movieTitle.textContent = 'Title: ' + moviesArray[specificSelect].movieName;
+  titleEl.setAttribute('id', 'filmTitle');
   titleDiv.appendChild(movieTitle);
 
   let movieGnere = document.createElement('h4');
-  movieGnere.textContent = moviesArray[specificSelect].genre;
+  movieGnere.textContent = 'Type: ' + moviesArray[specificSelect].genre;
+  movieGnere.setAttribute('id', 'filmGenre');
   titleDiv.appendChild(movieGnere);
 
   let movieRating = document.createElement('h4');
-  movieRating.textContent = moviesArray[specificSelect].rating;
+  movieRating.textContent = 'Rating: ' + moviesArray[specificSelect].rating;
+  movieRating.setAttribute('id', 'filmRating');
   titleDiv.appendChild(movieRating);
 
   let imgDiv = document.createElement('div');
+  imgDiv.setAttribute('id', 'filmImgDiv');
   filmDivEl.appendChild(imgDiv);
 
   let movieImg = document.createElement('img');
   movieImg.setAttribute('src', moviesArray[specificSelect].img);
+  movieImg.setAttribute('id', 'filmImg');
   imgDiv.appendChild(movieImg);
 
   let descriptionDiv = document.createElement('div');
+  descriptionDiv.setAttribute('id', 'filmDescriptionDiv');
   filmDivEl.appendChild(descriptionDiv);
 
   let movieDescription = document.createElement('p');
-  movieDescription.textContent = moviesArray[specificSelect].description;
+  movieDescription.textContent = 'Description: ' + moviesArray[specificSelect].description;
+  movieDescription.setAttribute('id', 'filmDescription');
   descriptionDiv.appendChild(movieDescription);
 
   // ADD TRAILERS AND PRICE
   let trailerDiv = document.createElement('div');
+  trailerDiv.setAttribute('id', 'filmTrailerDiv');
   filmDivEl.appendChild(trailerDiv);
 
   // let movieTrailer = document.createElement('video');
+  // movieTrailer.setAttribute('id', 'movieTrailer');;
   // movieTrailer.setAttribute('controls');
+
   // let movieSource = document.createElement('source');
+  // movieSource.setAttribute('id', 'movieSource');;
   // movieSource.setAttribute('source', '')
   // movieSource.setAttribute('type', '')
   // trailerDiv.appendChild(movieTrailer);
 
   let cartDiv = document.createElement('div');
+  cartDiv.setAttribute('id', 'filmCartDiv');
   filmDivEl.appendChild(cartDiv);
 
   // let moviePrice = document.createElement('p');
-  // moviePrice.textContent = moviesArray[specificSelect].price;
+  // moviePrice.setAttribute('id', 'moviePrice');
+  // moviePrice.textContent = 'Price: ' + moviesArray[specificSelect].price;
   // cartDiv.appendChild(moviePrice);
 
 
