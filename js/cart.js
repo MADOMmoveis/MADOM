@@ -109,11 +109,12 @@ function populateCart(){
 }
 populateCart();
 
-let submit = document.querySelector('#submit');
+let submit = document.querySelector('#addLocation');
 
-submit.addEventListener('click', function (e) {
+submit.addEventListener('submit', function (e) {
   e.preventDefault();
   // Hide first view
+  alert('hi');
   document.getElementById('forminputs').style.display = 'none';
 
   // Show thank you message element
