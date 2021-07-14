@@ -1511,12 +1511,17 @@ footer{
     border-bottom: 1px solid #c3c3c3;
 }
 
+#myDialog5{
+    width: 500px;
+}
+
 .removefav{
     background: none;
     border: none;
     color: rgb(151, 0, 0);
-    float: right;
     cursor: pointer;
+    position: absolute;
+    right: 0px;
 }
 
 .closeFav {
