@@ -122,8 +122,13 @@ submit.addEventListener('submit', function (e) {
 
   // Show thank you message element
   document.getElementById('thank_you').style.display = 'block';
-  let carrt=[];
-  localStorage.setItem('cart',carrt);
+
+  let emptyCart=[];
+  localStorage.setItem('cart', emptyCart);
+  let cartSum = document.getElementById('cartSum');
+  cartSum.textContent = emptyCart.length;
+
+
   let tableRemove=document.getElementById('cartPreview');
   tableRemove.style.display='none';
 
