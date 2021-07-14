@@ -4,7 +4,7 @@
 let objCart;
 
 function retrieveCart(){
-  let strCart = localStorage.getItem('cart') || [];
+  let strCart = localStorage.getItem('cart') || JSON.stringify([]);
   objCart = JSON.parse(strCart);
 }
 
@@ -34,7 +34,7 @@ let cartTable = document.getElementById('cartBody');
 
 function populateCart(){
 
-  let strCart = localStorage.getItem('cart') || [];
+  let strCart = localStorage.getItem('cart') || JSON.stringify([]);
   let objCart = JSON.parse(strCart);
   // console.log(objCart);
 
@@ -136,7 +136,7 @@ submit.addEventListener('submit', function (e) {
 
 function removeMovie(id){
 
-    let strCart = localStorage.getItem('cart') || [];
+    let strCart = localStorage.getItem('cart') || JSON.stringify([]);
     objCart = JSON.parse(strCart);
     // if (event.target.id > objCart.length){} else{
 

@@ -249,7 +249,7 @@ fieldset {
 
 
   .col-20 {
-    float: left;
+    display: inline-block;
     width: 20%;
     margin-top: 6px;
     position: relative;
@@ -1106,7 +1106,6 @@ button.swiper-pagination-bullet {
    /* } */
    
 #comedyCategory , #dramaCategory {
-    padding-top: 30%;
     margin-top: 5%;
     /* margin-top: 10%; */
 
@@ -1225,6 +1224,10 @@ button.swiper-pagination-bullet {
         
     
     }
+
+    footer div ul li a:hover{
+        color: var(--main);
+    }
     
     footer div ul li a{
         text-decoration:none;
@@ -1232,6 +1235,22 @@ button.swiper-pagination-bullet {
         color:grey;
         
     }
+
+    /* socialmediacoloring*/
+
+    i.fab.fa-facebook.fa-2x {
+        color: #3b5998;
+    }
+
+    i.fab.fa-twitter-square.fa-2x {
+        color: #00acee;
+    }
+
+    i.fab.fa-instagram.fa-2x {
+        color: #8a3ab9;
+    }
+
+
     
     #paymentMethods{
         text-align:right;
@@ -1595,3 +1614,21 @@ footer{
 	-webkit-animation: tilt-in-top-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: tilt-in-top-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+/* trailer styles */
+
+#filmTrailerDiv{
+    margin-left: 5%;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.trailerH2 {
+    font-size: 25px;
+    color: #fff;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* end trailer styles */

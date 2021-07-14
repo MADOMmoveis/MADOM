@@ -63,12 +63,31 @@ function renderMovie(objId){
   movieDescription.setAttribute('id', 'filmDescription');
   descriptionDiv.appendChild(movieDescription);
 
+  let cartDiv = document.createElement('div');
+  cartDiv.setAttribute('id', 'filmCartDiv');
+  filmDivEl.appendChild(cartDiv);
+
+  let moviePrice = document.createElement('p');
+  moviePrice.setAttribute('id', 'moviePrice');
+  moviePrice.textContent = 'Price: ' + moviesArray[specificSelect].price;
+  cartDiv.appendChild(moviePrice);
+
+  let h2 = document.createElement('h2');
+  h2.innerHTML = "Movie Trailer <i class='fa fa-film'></i>";
+  h2.className ="trailerH2";
+  filmDivEl.appendChild(h2);
+  
   // ADD TRAILERS AND PRICE
   let trailerDiv = document.createElement('div');
   trailerDiv.setAttribute('id', 'filmTrailerDiv');
   filmDivEl.appendChild(trailerDiv);
 
-  // let movieTrailer = document.createElement('video');
+  
+
+
+  trailerDiv.innerHTML = '<iframe width="50%" height="500" src="' + moviesArray[specificSelect].trailer + '" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+   
   // movieTrailer.setAttribute('id', 'movieTrailer');;
   // movieTrailer.setAttribute('controls');
 
@@ -78,14 +97,7 @@ function renderMovie(objId){
   // movieSource.setAttribute('type', '')
   // trailerDiv.appendChild(movieTrailer);
 
-  let cartDiv = document.createElement('div');
-  cartDiv.setAttribute('id', 'filmCartDiv');
-  filmDivEl.appendChild(cartDiv);
-
-  let moviePrice = document.createElement('p');
-  moviePrice.setAttribute('id', 'moviePrice');
-  moviePrice.textContent = 'Price: ' + moviesArray[specificSelect].price;
-  cartDiv.appendChild(moviePrice);
+  
 
 
   let movieAddToCart = document.createElement('button');

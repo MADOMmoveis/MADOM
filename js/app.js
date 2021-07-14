@@ -1,7 +1,6 @@
 /* eslint-disable no-inner-declarations */
 'use strict';
 
-
 let path = window.location.pathname;
 let page = path.split('/').pop();
 console.log( page );
@@ -13,7 +12,7 @@ let favorite = [];
 
 
 //EDIT >> ADD PRICE
-function Movie(id, img, movieName, genre, rating,price){
+function Movie(id, img, movieName, genre, rating,price,trailer){
   this.img = img;
   this.movieName = movieName;
   this.rating= rating;
@@ -22,6 +21,7 @@ function Movie(id, img, movieName, genre, rating,price){
   this.description;
   this.id = id;
   this.price=price;
+  this.trailer = trailer;
 
   moviesArray.push(this);
 
@@ -30,36 +30,36 @@ function Movie(id, img, movieName, genre, rating,price){
 // Create Movies
 
 function generateMovies(){
-  new Movie(0, 'img/Action/Bloodshot.jpg','Bloodshot', 'Action', '5.7','5.7 $');
-  new Movie(1, 'img/Action/Fury.jpg', 'Fury', 'Action', '7.6','5.7 $');
-  new Movie(2, 'img/Action/Gemini Man.jpg', 'Gemini Man', 'Action', '5.7','5.7 $');
-  new Movie(3, 'img/Action/Godzilla vs Kong.jpg', 'Godzilla vs Kong' ,'Action', '6.4','5.7 $');
-  new Movie(4, 'img/Action/John Wick.jpg', 'John Wick','Action', '7.4','5.7 $');
-  new Movie(5, 'img/Action/Maze Runner.jpg', 'Maze Runner','Action', '6.8','5.7 $');
-  new Movie(6, 'img/Action/Spenser Confidential.jpg', 'Spenser Confidential','Action', '6.2','5.7 $');
-  new Movie(7, 'img/Action/The Dark Tower.jpg', 'The Dark Tower','Action', '5.6','5.7 $');
-  new Movie(8, 'img/Action/The Tomorrow War.jpg', 'The Tomorrow War','Action', '6.7','5.7 $');
-  new Movie(9, 'img/Action/Without Remorse.jpg', 'Without Remorse' ,'Action', '5.8','5.7 $');
-  new Movie(10, 'img/Comedy/Cats and Dogs.jpg', 'Cats and Dogs', 'Comedy', '5.1','10 $');
-  new Movie(11, 'img/Comedy/Game Night.jpg', 'Game Night', 'Comedy', '6.9','10 $');
-  new Movie(12, 'img/Comedy/Get Hard.jpg', 'Get Hard', 'Comedy', '6','10 $');
-  new Movie(13, 'img/Comedy/Hangover.jpg', 'Hangover', 'Comedy', '7.7','10 $');
-  new Movie(14, 'img/Comedy/Instant Family.jpg', 'Instant Family', 'Comedy', '7.3','10 $');
-  new Movie(15, 'img/Comedy/Jumanji.jpg', 'Jumanji', 'Comedy', '7','10 $');
-  new Movie(16, 'img/Comedy/Swiss Army Man.jpg', 'Swiss Army Man', 'Comedy', '7','10 $');
-  new Movie(17, 'img/Comedy/The DDD.jpg', 'The Dead Don\'t Die', 'Comedy', '5.5','10 $');
-  new Movie(18, 'img/Comedy/The Mitchells.jpg', 'The Mitchells', 'Comedy', '7.7','10 $');
-  new Movie(19, 'img/Comedy/Zombieland.jpg', 'Zombieland', 'Comedy', '7.6','10 $');
-  new Movie(20, 'img/Drama/Cast Away.jpg', 'Cast Away', 'Drama', '7.8','20 $');
-  new Movie(21, 'img/Drama/Dunkirk.jpg', 'Dunkirk', 'Drama', '7.8','20 $');
-  new Movie(22, 'img/Drama/Forrest Gump.jpg', 'Forrest Gump', 'Drama', '8.8','20 $');
-  new Movie(23, 'img/Drama/Frozen.jpg', 'Frozen', 'Drama', '7.4','20 $');
-  new Movie(24, 'img/Drama/Joker.jpg', 'Joker', 'Drama', '8.4','20 $');
-  new Movie(25, 'img/Drama/Shutter Island.jpg', 'Shutter Island', 'Drama', '8.2','20 $');
-  new Movie(26, 'img/Drama/Tenet.jpg', 'Tenet', 'Drama', '7.4','20 $');
-  new Movie(27, 'img/Drama/The Hunter.jpg', 'The Hunter', 'Drama', '6.7','20 $');
-  new Movie(28, 'img/Drama/The Revenant.jpg', 'The Revenant', 'Drama', '8','20 $');
-  new Movie(29, 'img/Drama/The Terminal.jpg', 'The Terminal', 'Drama', '7.4','20 $');
+  new Movie(0, 'img/Action/Bloodshot.jpg','Bloodshot', 'Action', '5.7','5.7 $','https://www.youtube.com/embed/vOUVVDWdXbo');
+  new Movie(1, 'img/Action/Fury.jpg', 'Fury', 'Action', '7.6','5.7 $','https://www.youtube.com/embed/DNHuK1rteF4');
+  new Movie(2, 'img/Action/Gemini Man.jpg', 'Gemini Man', 'Action', '5.7','5.7 $','https://www.youtube.com/embed/AbyJignbSj0');
+  new Movie(3, 'img/Action/Godzilla vs Kong.jpg', 'Godzilla vs Kong' ,'Action', '6.4','5.7 $','https://www.youtube.com/embed/odM92ap8_c0');
+  new Movie(4, 'img/Action/John Wick.jpg', 'John Wick','Action', '7.4','5.7 $','https://www.youtube.com/embed/2AUmvWm5ZDQ');
+  new Movie(5, 'img/Action/Maze Runner.jpg', 'Maze Runner','Action', '6.8','5.7 $','https://www.youtube.com/embed/AwwbhhjQ9Xk');
+  new Movie(6, 'img/Action/Spenser Confidential.jpg', 'Spenser Confidential','Action', '6.2','5.7 $','https://www.youtube.com/embed/bgKEoHNi3Uc');
+  new Movie(7, 'img/Action/The Dark Tower.jpg', 'The Dark Tower','Action', '5.6','5.7 $','https://www.youtube.com/embed/GjwfqXTebIY');
+  new Movie(8, 'img/Action/The Tomorrow War.jpg', 'The Tomorrow War','Action', '6.7','5.7 $','https://www.youtube.com/embed/QPistcpGB8o');
+  new Movie(9, 'img/Action/Without Remorse.jpg', 'Without Remorse' ,'Action', '5.8','5.7 $','https://www.youtube.com/embed/e-rw2cxFVLg');
+  new Movie(10, 'img/Comedy/Cats and Dogs.jpg', 'Cats and Dogs', 'Comedy', '5.1','10 $', 'https://www.youtube.com/embed/CKZtif47lA4');
+  new Movie(11, 'img/Comedy/Game Night.jpg', 'Game Night', 'Comedy', '6.9','10 $','https://www.youtube.com/embed/qmxMAdV6s4U');
+  new Movie(12, 'img/Comedy/Get Hard.jpg', 'Get Hard', 'Comedy', '6','10 $','https://www.youtube.com/embed/lEqrpuU9fYI');
+  new Movie(13, 'img/Comedy/Hangover.jpg', 'Hangover', 'Comedy', '7.7','10 $','https://www.youtube.com/embed/tcdUhdOlz9M');
+  new Movie(14, 'img/Comedy/Instant Family.jpg', 'Instant Family', 'Comedy', '7.3','10 $', 'https://www.youtube.com/embed/IUfZq3DUd3Y');
+  new Movie(15, 'img/Comedy/Jumanji.jpg', 'Jumanji', 'Comedy', '7','10 $', 'https://www.youtube.com/embed/2QKg5SZ_35I');
+  new Movie(16, 'img/Comedy/Swiss Army Man.jpg', 'Swiss Army Man', 'Comedy', '7','10 $','https://www.youtube.com/embed/4v92gXetGqA');
+  new Movie(17, 'img/Comedy/The DDD.jpg', 'The Dead Don\'t Die', 'Comedy', '5.5','10 $','https://www.youtube.com/embed/bs5ZOcU6Bnw');
+  new Movie(18, 'img/Comedy/The Mitchells.jpg', 'The Mitchells', 'Comedy', '7.7','10 $','https://www.youtube.com/embed/_ak5dFt8Ar0');
+  new Movie(19, 'img/Comedy/Zombieland.jpg', 'Zombieland', 'Comedy', '7.6','10 $','https://www.youtube.com/embed/8m9EVP8X7N8');
+  new Movie(20, 'img/Drama/Cast Away.jpg', 'Cast Away', 'Drama', '7.8','20 $','https://www.youtube.com/embed/qGuOZPwLayY');
+  new Movie(21, 'img/Drama/Dunkirk.jpg', 'Dunkirk', 'Drama', '7.8','20 $','https://www.youtube.com/embed/F-eMt3SrfFU');
+  new Movie(22, 'img/Drama/Forrest Gump.jpg', 'Forrest Gump', 'Drama', '8.8','20 $','https://www.youtube.com/embed/bLvqoHBptjg');
+  new Movie(23, 'img/Drama/Frozen.jpg', 'Frozen', 'Drama', '7.4','20 $','https://www.youtube.com/embed/TbQm5doF_Uc');
+  new Movie(24, 'img/Drama/Joker.jpg', 'Joker', 'Drama', '8.4','20 $','https://www.youtube.com/embed/zAGVQLHvwOY');
+  new Movie(25, 'img/Drama/Shutter Island.jpg', 'Shutter Island', 'Drama', '8.2','20 $','https://www.youtube.com/embed/5iaYLCiq5RM');
+  new Movie(26, 'img/Drama/Tenet.jpg', 'Tenet', 'Drama', '7.4','20 $','https://www.youtube.com/embed/L3pk_TBkihU');
+  new Movie(27, 'img/Drama/The Hunter.jpg', 'The Hunter', 'Drama', '6.7','20 $','https://www.youtube.com/embed/vW6W36-oWCU');
+  new Movie(28, 'img/Drama/The Revenant.jpg', 'The Revenant', 'Drama', '8','20 $','https://www.youtube.com/embed/LoebZZ8K5N0');
+  new Movie(29, 'img/Drama/The Terminal.jpg', 'The Terminal', 'Drama', '7.4','20 $','https://www.youtube.com/embed/iZqQRmhRvyg');
 
 }
 generateMovies();
@@ -642,7 +642,7 @@ console.log(localStorage.cart);
 
 if(typeof localStorage.cart !== 'undefined'){
 
-  let strCart = localStorage.getItem('cart') || [];
+  let strCart = localStorage.getItem('cart') || JSON.stringify([]);
   let objCart = JSON.parse(strCart);
 
   let sum = 0;
@@ -660,7 +660,7 @@ if(typeof localStorage.cart !== 'undefined'){
 
 if(typeof localStorage.favorite !== 'undefined'){
 
-  let strFavt = localStorage.getItem('favorite') || [];
+  let strFavt = localStorage.getItem('favorite') || JSON.stringify([]);
   let objFavt = JSON.parse(strFavt);
 
   let sum2 = 0;
@@ -708,6 +708,7 @@ function addToFav(id){
 
   let specificSelect =id;
 
+
   if(favorite.includes(specificSelect)){
     console.log('already exists');
     setTimeout(myFunction4(),1000);
@@ -715,9 +716,14 @@ function addToFav(id){
 
 
   } else {
+
+    if(typeof localStorage.favorite == 'undefined'){
+      localStorage.favorite = [];
+    }
+
     if(typeof localStorage.favorite !== 'undefined'){
 
-    let strFav = localStorage.getItem('favorite') || [];
+    let strFav = localStorage.getItem('favorite') || JSON.stringify([]);
     let objFav = JSON.parse(strFav);
     favorite = objFav;
    
@@ -741,7 +747,9 @@ function addToFav(id){
 
     setTimeout(myFunction3(),1000);
 
-  } }
+  } else {
+  }
+}
 
 
 
@@ -866,7 +874,7 @@ function listFav(){
   favDialog.style.display = '';
   favDialog.textContent = '';
 
-  let strFav = localStorage.getItem('favorite') || [];
+  let strFav = localStorage.getItem('favorite') || JSON.stringify([]);
   let objFav = JSON.parse(strFav);
   favorite = objFav;
 
@@ -927,7 +935,7 @@ function closeModal(){
 
 function removeFav(event){
 
-  let strFav = localStorage.getItem('favorite') || [];
+  let strFav = localStorage.getItem('favorite') || JSON.stringify([]);
   let objFav = JSON.parse(strFav);
 
   let buttonID = parseInt(event.target.id);
@@ -939,13 +947,17 @@ function removeFav(event){
   let updatedFav = JSON.stringify(favorite);
   localStorage.setItem('favorite', updatedFav);
 
+
   retrieveFav();
   closeModal();
   listFav();
 }
 
 function retrieveFav(){
-  let strFav = localStorage.getItem('favorite') || [];
+  let strFav = localStorage.getItem('favorite') || JSON.stringify([]);
   let objFav = JSON.parse(strFav);
+
+  document.getElementById('favtSum').textContent = objFav.length;
+
 }
 
