@@ -1,12 +1,12 @@
 'use strict';
 
 // Read From Local Storage
+let objCart;
 
 function retrieveCart(){
   let strCart = localStorage.getItem('cart') || [];
-  let objCart = JSON.parse(strCart);
+  objCart = JSON.parse(strCart);
 }
-
 
 
 
@@ -36,7 +36,7 @@ function populateCart(){
 
   let strCart = localStorage.getItem('cart') || [];
   let objCart = JSON.parse(strCart);
-  console.log(objCart);
+  // console.log(objCart);
 
   cartTable.textContent = '';
   let sum=0;
@@ -48,9 +48,9 @@ function populateCart(){
     cartTable.appendChild(rowEl);
 
     let matched = idMatch(objCart[i]);
-    console.log(typeof objCart[i]);
+    // console.log(typeof objCart[i]);
     sum+=Number((moviesArray[matched].price).split(' ')[0]);
-    console.log(sum);
+    // console.log(sum);
 
 
 
@@ -77,10 +77,14 @@ function populateCart(){
 
 
     let removeBtn = document.createElement('button');
-    removeBtn.innerHTML= '<i class="fa fa-close">';
+    removeBtn.setAttribute('onclick', `removeMovie("${i}")`);
+    removeBtn.innerHTML= `remove <i id='${i}' class="fa fa-close">`;
     removeBtn.className='removecart';
-    removeBtn.setAttribute('id', [i]);
-    removeBtn.addEventListener('click', removeMovie);
+
+    // removeBtn.removeAttribute('id');
+    // removeBtn.setAttribute('id', [i]);
+    // removeBtn.addEventListener('click', removeMovie);
+
     tdBtn.appendChild(removeBtn);
 
 
@@ -130,27 +134,35 @@ submit.addEventListener('submit', function (e) {
 
 // Remove Items From Cart
 
-function removeMovie(event){
+function removeMovie(id){
 
-  let strCart = localStorage.getItem('cart') || [];
-  let objCart = JSON.parse(strCart);
+    let strCart = localStorage.getItem('cart') || [];
+    objCart = JSON.parse(strCart);
+    // if (event.target.id > objCart.length){} else{
 
-  let buttonID = parseInt(event.target.id);
+    // let buttonID = parseInt(event.target.id);
 
-  let updateCart = objCart.splice(buttonID,1);
+    console.log(id);
 
-  let cartSum = document.getElementById('cartSum');
-  if(objCart.length >= 0){
-    let sum = objCart.length;
+    objCart.splice(id,1);
 
-    cartSum.innerHTML = sum;
+
+    let updatedCart = JSON.stringify(objCart);
+    localStorage.setItem('cart', updatedCart);
+
+
+
+    let cartSum = document.getElementById('cartSum');
+    if(objCart.length >= 0){
+      let sum = objCart.length;
+
+      cartSum.innerHTML = sum;
+    }
+
+
+    retrieveCart();
+    populateCart();
   }
-
-  let updatedCart = JSON.stringify(objCart);
-  localStorage.setItem('cart', updatedCart);
-
-  retrieveCart();
-  populateCart();
-}
+// }
 
 populateCart();
