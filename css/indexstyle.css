@@ -3,6 +3,8 @@
     font-family: "Montserrat", sans-serif;
 
 }
+
+@import url(anim.css);
 :root {
     --main: #d50055;
     --primary:#131722;
@@ -251,6 +253,7 @@ fieldset {
     width: 20%;
     margin-top: 6px;
     position: relative;
+    
   }
 
   .col-20 img{
@@ -1581,4 +1584,9 @@ footer{
     border-right:14px solid #eee;
     border-top:  13px solid transparent;
     border-bottom:  13px solid transparent;
+}
+
+.tilt-in-top-1 {
+	-webkit-animation: tilt-in-top-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }

@@ -309,7 +309,7 @@ if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
 
       let movieCol = document.createElement('div');
       actionCategory.appendChild(movieCol);
-      movieCol.className = 'col-20';
+      movieCol.className = 'col-20 tilt-in-top-1';
       randomArray.push(randomNumber);
       actionImg.setAttribute('src', moviesArray[randomNumber].img);
       // actionImg.className += `purchasable ${moviesArray[randomNumber].id}`;
