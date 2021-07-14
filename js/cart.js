@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 
 // Read From Local Storage
@@ -122,8 +123,10 @@ submit.addEventListener('submit', function (e) {
 
   // Show thank you message element
   document.getElementById('thank_you').style.display = 'block';
-  let carrt=[];
-  localStorage.setItem('cart',carrt);
+  let emptyCart=[];
+  localStorage.setItem('cart', emptyCart);
+  let cartSum = document.getElementById('cartSum');
+  cartSum.textContent = emptyCart.length;
   let tableRemove=document.getElementById('cartPreview');
   tableRemove.style.display='none';
 
@@ -134,35 +137,36 @@ submit.addEventListener('submit', function (e) {
 
 // Remove Items From Cart
 
+// eslint-disable-next-line no-unused-vars
 function removeMovie(id){
 
-    let strCart = localStorage.getItem('cart') || JSON.stringify([]);
-    objCart = JSON.parse(strCart);
-    // if (event.target.id > objCart.length){} else{
+  let strCart = localStorage.getItem('cart') || JSON.stringify([]);
+  objCart = JSON.parse(strCart);
+  // if (event.target.id > objCart.length){} else{
 
-    // let buttonID = parseInt(event.target.id);
+  // let buttonID = parseInt(event.target.id);
 
-    console.log(id);
+  // console.log(id);
 
-    objCart.splice(id,1);
-
-
-    let updatedCart = JSON.stringify(objCart);
-    localStorage.setItem('cart', updatedCart);
+  objCart.splice(id,1);
 
 
-
-    let cartSum = document.getElementById('cartSum');
-    if(objCart.length >= 0){
-      let sum = objCart.length;
-
-      cartSum.innerHTML = sum;
-    }
+  let updatedCart = JSON.stringify(objCart);
+  localStorage.setItem('cart', updatedCart);
 
 
-    retrieveCart();
-    populateCart();
+
+  let cartSum = document.getElementById('cartSum');
+  if(objCart.length >= 0){
+    let sum = objCart.length;
+
+    cartSum.innerHTML = sum;
   }
+
+
+  retrieveCart();
+  populateCart();
+}
 // }
 
 populateCart();

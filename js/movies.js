@@ -43,7 +43,16 @@ function actionImgs(){
     //Add to Fav
     let movieAddToFav = document.createElement('button');
     movieAddToFav.className = 'addtofavbtn';
-    movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+
+    if(typeof localStorage.favorite !== 'undefined'){
+      if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+      } else {
+        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+
+      }
+    }
+
     movieData.appendChild(movieAddToFav);
 
     movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -65,7 +74,7 @@ function actionImgs(){
     let rating = document.createElement('h4');
     rating.className = 'movieRating';
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-    let priceTag=document.createElement('h4')
+    let priceTag=document.createElement('h4');
     priceTag.className='moviePrice';
     priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
@@ -125,7 +134,15 @@ function comedyImgs(){
     //Add to Fav
     let movieAddToFav = document.createElement('button');
     movieAddToFav.className = 'addtofavbtn';
-    movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+
+    if(typeof localStorage.favorite !== 'undefined'){
+      if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+      } else {
+        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+
+      }
+    }
     movieData.appendChild(movieAddToFav);
 
     movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -146,9 +163,9 @@ function comedyImgs(){
     let rating = document.createElement('h4');
     rating.className = 'movieRating';
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-    
-    
-    let priceTag=document.createElement('h4')
+
+
+    let priceTag=document.createElement('h4');
     priceTag.className='moviePrice';
     priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
@@ -208,7 +225,17 @@ function dramaImgs(){
     //Add to Fav
     let movieAddToFav = document.createElement('button');
     movieAddToFav.className = 'addtofavbtn';
-    movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+
+    if(typeof localStorage.favorite !== 'undefined'){
+      if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+      } else {
+        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+
+      }
+    }
+
+
     movieData.appendChild(movieAddToFav);
 
     movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -230,7 +257,7 @@ function dramaImgs(){
     rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
 
 
-    let priceTag=document.createElement('h4')
+    let priceTag=document.createElement('h4');
     priceTag.className='moviePrice';
     priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
@@ -240,7 +267,7 @@ function dramaImgs(){
     movieData.appendChild(genre);
     movieData.appendChild(rating);
     movieData.appendChild(priceTag);
-        movieData.appendChild(priceTag);
+    movieData.appendChild(priceTag);
 
     movieData.appendChild(movieAddToCart);
 
