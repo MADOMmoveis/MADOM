@@ -204,13 +204,13 @@ if(page == 'index.html' || page.length == 0){
           movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
         } else {
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-  
-        }  
+
+        }
       } else {
         movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
       }
-          
-      
+
+
       movieData.appendChild(movieAddToFav);
 
       movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -336,27 +336,27 @@ if(page == 'index.html' || page.length == 0){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn';
-      
+
 
       if(typeof localStorage.favorite !== 'undefined'){
         if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
           movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
         } else {
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-  
+
         }
       } else {
         movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
       }
 
-      
+
       movieCol.appendChild(movieAddToFav);
 
 
       let h3 = document.createElement('h3');
       h3.className = 'movietitle';
-      h3.setAttribute("onclick","prepareSwitch(" + moviesArray[randomNumber].id + ")");
-      h3.style.cursor="pointer";
+      h3.setAttribute('onclick','prepareSwitch(' + moviesArray[randomNumber].id + ')');
+      h3.style.cursor='pointer';
       h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
 
       let genre = document.createElement('h4');
@@ -366,7 +366,7 @@ if(page == 'index.html' || page.length == 0){
       let rating = document.createElement('h4');
       rating.className = 'movieRating';
       rating.innerHTML = ('Rating : ' + moviesArray[randomNumber].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>');
-     
+
       let priceTag=document.createElement('h4');
       priceTag.className='moviePrice';
       priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
@@ -443,7 +443,7 @@ if(page == 'index.html' || page.length == 0){
           movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
         } else {
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-        }   
+        }
       } else {
         movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
       }
@@ -461,8 +461,8 @@ if(page == 'index.html' || page.length == 0){
 
       let h3 = document.createElement('h3');
       h3.className = 'movietitle';
-      h3.setAttribute("onclick","prepareSwitch(" + moviesArray[randomNumber].id + ")");
-      h3.style.cursor="pointer";
+      h3.setAttribute('onclick','prepareSwitch(' + moviesArray[randomNumber].id + ')');
+      h3.style.cursor='pointer';
       h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
 
       let genre = document.createElement('h4');
@@ -478,7 +478,7 @@ if(page == 'index.html' || page.length == 0){
       priceTag.className='moviePrice';
       priceTag.textContent=`Price: ${moviesArray[randomNumber].price}`;
 
-      
+
 
 
 
@@ -538,20 +538,20 @@ if(page == 'index.html' || page.length == 0){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn';
-      
+
       if(typeof localStorage.favorite !== 'undefined'){
         if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
           movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
         } else {
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-  
+
         }
       } else {
-          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
 
       }
 
-     
+
       movieData.appendChild(movieAddToFav);
 
       movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -564,10 +564,10 @@ if(page == 'index.html' || page.length == 0){
 
       let h3 = document.createElement('h3');
       h3.className = 'movietitle';
-      h3.setAttribute("onclick","prepareSwitch(" + moviesArray[randomNumber].id + ")");
-      h3.style.cursor="pointer";
+      h3.setAttribute('onclick','prepareSwitch(' + moviesArray[randomNumber].id + ')');
+      h3.style.cursor='pointer';
       h3.textContent = ('Title : ' + moviesArray[randomNumber].movieName);
-      
+
 
       let genre = document.createElement('h4');
       genre.className = 'movieType';
@@ -671,7 +671,7 @@ if(typeof localStorage.favorite !== 'undefined'){
     favtSum.innerHTML = sum2;
   }
 
-  
+
 }
 
 
@@ -712,35 +712,36 @@ function addToFav(id){
     console.log('already exists');
     setTimeout(myFunction4(),1000);
 
-    
+
 
   } else {
+    if(typeof localStorage.favorite !== 'undefined'){
 
     let strFav = localStorage.getItem('favorite') || [];
     let objFav = JSON.parse(strFav);
     favorite = objFav;
-
+   
     console.log('fav :: ' + localStorage.favorite);
-    
+
     favorite.push(specificSelect);
 
     let currentFavorite = JSON.stringify(favorite);
     localStorage.setItem('favorite', currentFavorite);
 
     let favBtn = document.querySelectorAll('.fav' + specificSelect);
-    
+
     for (let i=0; i<favBtn.length; i++){
-      favBtn[i].className = "fa fa-heart icon fav" + specificSelect;
+      favBtn[i].className = 'fa fa-heart icon fav' + specificSelect;
     }
-    
-    favBtn.className="fa fa-heart icon fav" + specificSelect;
+
+    favBtn.className='fa fa-heart icon fav' + specificSelect;
     document.getElementById('favtSum').textContent = objFav.length;
 
-    
+
 
     setTimeout(myFunction3(),1000);
 
-  }
+  } }
 
 
 
@@ -872,11 +873,11 @@ function listFav(){
   favDialog.innerHTML = '<h2>My Favorites <i class="fas fa-heart "></i></h2>';
 
   let ulEl = document.createElement('ul');
-  ulEl.style.textAlign = "left";
+  ulEl.style.textAlign = 'left';
   favDialog.appendChild(ulEl);
 
   let closeButton = document.createElement('button');
-  closeButton.className = "closeFav";
+  closeButton.className = 'closeFav';
   closeButton.innerHTML = 'Close <i class="fa fa-close"></i>';
   closeButton.setAttribute('onclick', 'closeModal()');
   favDialog.appendChild(closeButton);
@@ -884,7 +885,7 @@ function listFav(){
 
   for (let i = 0; i < objFav.length; i++){
     let liEl = document.createElement('li');
-    liEl.className="favLi";
+    liEl.className='favLi';
     let counter = objFav[i];
     liEl.innerHTML = `<a class="filmPage" style="vertical-align: middle!important;" onclick="prepareSwitch(${moviesArray[counter].id})">
                           <img style="width:100px;height:100px;" src="${moviesArray[counter].img}"> 
