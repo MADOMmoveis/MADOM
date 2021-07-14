@@ -206,8 +206,6 @@ if(page == 'index.html' || page.length == 0){
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
 
         }
-      } else {
-        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
       }
 
 
@@ -274,7 +272,16 @@ if(page == 'index.html' || page.length == 0){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn-rated';
-      movieAddToFav.innerHTML = '<i class="fas fa-heart icon"></i>';
+
+      if(typeof localStorage.favorite !== 'undefined'){
+        if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+          movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+        } else {
+          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+
+        }
+      }
+
       movieData.appendChild(movieAddToFav);
 
       movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -345,9 +352,7 @@ if(page == 'index.html' || page.length == 0){
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
 
         }
-      } else {
-        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-      }
+      } 
 
 
       movieCol.appendChild(movieAddToFav);
@@ -444,8 +449,6 @@ if(page == 'index.html' || page.length == 0){
         } else {
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
         }
-      } else {
-        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
       }
 
       movieData.appendChild(movieAddToFav);
@@ -546,10 +549,7 @@ if(page == 'index.html' || page.length == 0){
           movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
 
         }
-      } else {
-        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-
-      }
+      } 
 
 
       movieData.appendChild(movieAddToFav);
