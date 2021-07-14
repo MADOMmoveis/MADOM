@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/indexstyle.css">
+
+   
+
+    <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>
+    <link rel="icon" 
+      type="image/png" 
+      href="img/logo_only_smaller_MADOM.png">
+
+</head>
+
+
+
+
+
+<body onload="loadfun2()">
+    <div class="bounce" id="loading" style="text-align: center;">
+        <img style="width: 350px; margin-top: 10%;" src="img/logo_MADOM.png"><br>
+        <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+
+    <header>
+
+        <!-- UNIQUE FOR EACH PAGE -->
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="logo">
+                    <a href="index.html"><img class="logoimg" src="img/logo_MADOM.png"></a>
+                </li>
+                <span class="navmid ">
+                    <li class="navlistitem">
+                        <a class="activeli" href="index.html"> <i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="navlistitem">
+                        <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
+                    </li>
+                    <!-- <li class="navlistitem">
+                        <a href="packages.html"><i class="fa fa-list-alt"></i> Packages</a>
+                    </li> -->
+                    <li class="navlistitem">
+                        <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
+                    </li>
+                </span>
+                <li class="navlistitem right">
+                    <a id="favButton"><i class="fas fa-heart icon"></i> <span id="favtSum">0</span></a>
+                </li>
+                <li class="navlistitem right">
+                    <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> <span id="cartSum">0</span> </a>
+                </li>
+                <li class="navlistitem right">
+                    <a href="#"><i class="fas fa-search icon"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <main>
+
+        <dialog style="color: #d50055; text-align: center; font-size: 18px;" id="myDialog5">
+        </dialog>
+
+
+        <section id="checkoutTable">
+            <table id="cartPreview">
+                <thead>
+                    <tr>
+
+
+
+                        <th >Image</th>
+
+                        <th> Movie Name</th>
+                        <th> Price($)</th>
+
+
+                        <th> Remove</th>
+
+                    </tr>
+
+
+                </thead>
+
+                <tbody id="cartBody">
+                   
+                </tbody>
+
+
+
+                <tfoot>
+
+                </tfoot>
+
+            </table>
+
+
+
+
+        </section>
+        <section id="formSection">
+            <div class="center container2">
+                <form action="" id="addLocation">
+                    <fieldset>
+
+                        <legend>
+                            <h4>Checkout</h4>
+                        </legend>
+                        <span id="forminputs">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="fname"><i class="fa fa-user"></i> First Name</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="First Name" required type="text" id="fname"
+                                        name="fname">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="lname"><i class="fa fa-user"></i> Last Name</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Last Name" type="text" id="lname"
+                                        name="lname"  required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Email" required type="email" id="email" name="email">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="mobile"><i class="fa fa-phone"></i> Mobile Number</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Mobile Number" required type="number" id="mobile"
+                                        name="mobile">
+                                </div>
+                            </div>
+
+                            <hr>
+                            <legend>
+                                <h4>Payment information</h4>
+                            </legend>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="cnumber"><i class="fa fa-cc-visa"></i> Card Number</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Card Number" required type="number" id="cnumber"
+                                        name="cnumber">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="expdate"><i class="fa fa-calendar"></i> Expiry Date</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="EXP Date" required type="month" id="expdate"
+                                        name="expdate">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="password"><i class="fa fa-key"></i> Password</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Password" required type="password" id="password"
+                                        name="password">
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <button type="submit" id="submit">Place Order</button>
+                            </div>
+                        </span>
+
+
+                        <div id="thank_you" style="display: none;">
+                            <img width="250px"
+                                src="https://i.pinimg.com/originals/35/f3/23/35f323bc5b41dc4269001529e3ff1278.gif">
+                            <p>Thanks for your order!</p>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+
+    </main>
+
+
+
+
+    <hr>
+    <footer>
+      
+
+        <div>
+            <ul>
+                <li>
+                    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                </li>
+
+                <li>
+                    <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
+                </li>
+
+                <li>
+                    <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
+                </li>
+            </ul>
+        </div>
+        <div id="copy">
+            <img id="imgabd" src="img/logo_MADOM.png" width="130px" height="130px" />
+        </div>
+
+        <div id="paymentMethods">
+            <i class="fab fa-amazon-pay fa-2x"></i>
+
+            <i class="fab fa-cc-visa fa-2x"></i>
+            <i class="fab fa-cc-mastercard fa-2x"></i>
+
+            <i class="fab fa-cc-amex fa-2x"></i>
+        </div>
+
+        <div id="socialMedia">
+            <i class="fab fa-facebook fa-2x"></i>
+            <i class="fab fa-twitter-square fa-2x"></i>
+            <i class="fab fa-instagram fa-2x"></i>
+            <p class="copy">&copy; 2021</p>
+
+        </div>
+
+
+        
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+        <script src="js/app.js"></script>
+
+        <script>
+            // var submit = document.querySelector('#submit');
+
+            // submit.addEventListener('click', function (e) {
+            //     e.preventDefault();
+            //     // Hide first view
+            //     document.getElementById('forminputs').style.display = 'none';
+
+            //     // Show thank you message element
+            //     document.getElementById('thank_you').style.display = 'block';
+
+            // });
+        </script>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script>
+    /*preloader*/
+    var load = document.getElementById('loading');
+    function loadfun2()
+    {
+    
+
+    setTimeout(function () {
+        load.style.display = 'none';
+    }, 2000);
+    }
+
+
+</script>
+
+</html>

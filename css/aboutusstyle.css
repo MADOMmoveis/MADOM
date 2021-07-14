@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+* {
+    box-sizing: border-box;
+    font-family: 'Muli', sans-serif;
+}
+body {
+    background: url('http://www.platehelp.nl/media/W1siZiIsIjIwMTUvMTAvMjcvMTBfNTZfMjBfNTU3X0lNR18xOTAxXzEuanBnIl1d/IMG_1901-1.jpg');
+    background-size: cover;
+}
+#container {
+    width:  75%;
+    height: auto;
+    margin-top: 16px;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    text-align: center;
+    margin-left: 12.5%;
+}
+#container h1 {
+    color: #ECF6CE;
+    margin-bottom: 30px;
+}
+#container > hr {
+    border: none;
+    border: 1px solid #fff;
+    width: 80%;
+}
+.card {
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    width: 25%;
+    height: 400px;
+    opacity: 0.85;
+}
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 300ms;
+    transition: -webkit-transform 300ms;
+    transition: transform 300ms;
+    transition: transform 300ms, -webkit-transform 300ms;
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+    border-radius: 5px;
+}
+.front {
+    transform: rotateY(0deg);
+    background: linear-gradient(to bottom right, #131722, #3a3a3b);
+    text-align: center;
+    padding: 30px;
+}
+.back {
+    background: linear-gradient(to bottom right, #131722, #3a3a3b);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    padding: 40px 15px;
+    color: #fff;
+    font-size: 18px;
+    padding: 6px;
+    padding-top: 100px;
+    letter-spacing: 1px;
+
+}
+.card:hover .front {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+}
+.card:hover .back {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+}
+/* styling */
+.front .contact {
+    height: 220px;
+    width: 220px;
+    border: 5px solid #B2DBBF;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-kerning: normal;
+}
+.front .name {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+}
+.front .job {
+    color: #fff;
+    font-size: 15px;
+}
+.front hr {
+    border: none;
+    color: #B2DBBF;
+    border: 1px solid;
+}
+.back .icon {
+    fill: currentColor;
+    color: inherit;
+    height: 33px;
+    width: 33px;
+    margin-top: 15px;
+    color: white;
+}
+.back .icon:hover {
+    cursor: pointer;
+    color: #648767;
+}
+
+#heroBGAboutUs{
+    background: url(../img/herobg.jpg);
+    animation: slideUp 60s linear infinite;
+    background-repeat: repeat;
+    width: 100%;
+    height: 479px;                
+    box-shadow:inset 0 0 0 2000px rgba(19, 23, 34, 0.7);
+   
+}
+
+#feat{
+ text-align: center;
+ color: #fff;
+ font-size: 50px;
+ margin-top: 190px;
+ margin-right: 2px;
+}
+
+
+footer{
+    height: 200px!important;
+}
+
+

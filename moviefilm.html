@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/moviefilm.css">
+    <link rel="stylesheet" href="css/indexstyle.css">
+    <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png"  href="img/logo_only_smaller_MADOM.png">
+
+
+    <script src="https://kit.fontawesome.com/dd630b5962.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="logo">
+                <a href="index.html"><img class="logoimg" src="img/logo_MADOM.png"></a>
+            </li>
+            <span class="navmid ">
+                <li class="navlistitem">
+                    <a class="activeli" href="index.html"> <i class="fa fa-home"></i> Home</a>
+                </li>
+                <li class="navlistitem">
+                    <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
+                </li>
+                <!-- <li class="navlistitem">
+                    <a href="packages.html"><i class="fa fa-list-alt"></i> Packages</a>
+                </li> -->
+                <li class="navlistitem">
+                    <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
+                </li>
+            </span>
+            <li class="navlistitem right">
+                <a id="favButton"><i class="fas fa-heart icon"></i> <span id="favtSum">0</span></a>
+            </li>
+            <li class="navlistitem right">
+                <a href="cart.html"><i class="fas fa-shopping-cart icon"></i> <span id="cartSum">0</span> </a>
+            </li>
+            <li class="navlistitem right">
+                <a href="#"><i class="fas fa-search icon"></i></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main id="main">
+
+
+
+        <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog">
+            <i class="fa fa-check-circle"></i>
+            Movie has been added to cart !
+        </dialog>
+
+        <dialog style="color: firebrick; text-align: center; font-size: 18px;" id="myDialog2">
+            <i class="fa fa-close"></i>
+            This movie is already added to cart !
+        </dialog>
+        
+        <!-- FAV DIALOGS -->
+
+        
+
+        <dialog style="color: green; text-align: center; font-size: 18px;" id="myDialog3">
+            <i class="fa fa-check-circle"></i>
+            Movie has been added to your favorite !
+        </dialog>
+
+        <dialog style="color: firebrick; text-align: center; font-size: 18px;" id="myDialog4">
+            <i class="fa fa-close"></i>
+            This movie is already added to favorite !
+        </dialog>
+
+        <dialog style="color: #d50055; text-align: center; font-size: 18px;" id="myDialog5">
+        </dialog>
+
+
+        <div id="filmDiv"></div>
+        <h1></h1>
+    </main>
+
+    <footer>
+        <!-- UNIQUE FOR EACH PAGE -->
+
+        <div>
+            <ul>
+                <li>
+                    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                </li>
+                
+                <li>
+                    <a href="movies.html"><i class="fa fa-film"></i> Movies</a>
+                </li>
+               
+                <li>
+                    <a href="aboutus.html"><i class="fa fa-info-circle"></i> About Us</a>
+                </li>
+            </ul>
+        </div>
+        <div id="copy">
+            <img id="imgabd" src="img/logo_MADOM.png" width="130px" height="130px" />
+        </div>
+
+        <div id="paymentMethods">
+            <i class="fab fa-amazon-pay fa-2x"></i>
+            <i class="fas fa-cart-plus fa-2x"></i>
+            <i class="fab fa-cc-visa fa-2x"></i>
+            <i class="fab fa-cc-mastercard fa-2x"></i>
+            <i class="fab fa-cc-amex fa-2x"></i>
+        </div>
+
+        <div id="socialMedia">
+            <i class="fab fa-facebook fa-2x"></i>
+            <i class="fab fa-twitter-square fa-2x"></i>
+            <i class="fab fa-instagram fa-2x"></i>
+            <p class="copy">&copy; 2021</p>
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/moviefilm.js"></script>
+    <script>
+        /*preloader*/
+        var load = document.getElementById('loading');
+        function loadfun2() {
+
+
+            setTimeout(function () {
+                load.style.display = 'none';
+            }, 2000);
+        }
+
+    </script>
+</body>
+
+</html>
