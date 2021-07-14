@@ -3,7 +3,7 @@
 
 let path = window.location.pathname;
 let page = path.split('/').pop();
-console.log( page );
+// console.log( page );
 
 // Movies Constructor
 
@@ -638,7 +638,7 @@ for (let i = 0 ; i < purchasableEl.length ; i++){
 } */
 
 // ADD POP UP IF DUPLICATE
-console.log(localStorage.cart);
+// console.log(localStorage.cart);
 
 if(typeof localStorage.cart !== 'undefined'){
 
@@ -677,7 +677,7 @@ if(typeof localStorage.favorite !== 'undefined'){
 
 
 
-console.log('All : ' + cart.allMovies);
+// console.log('All : ' + cart.allMovies);
 function addToCart(id){
   //let selectedMovie =event.target;
   //console.log(typeof(selectedMovie));
@@ -686,16 +686,16 @@ function addToCart(id){
   let specificSelect =id;
 
   if(cart.allMovies.includes(specificSelect)){
-    console.log('already exists');
+    // console.log('already exists');
     setTimeout(myFunction2(),1000);
 
   } else {
 
-    console.log('new');
-    console.log(specificSelect);
+    // console.log('new');
+    // console.log(specificSelect);
     cart.allMovies.push(specificSelect);
     cart.saveCart();
-    console.log(cart);
+    // console.log(cart);
     setTimeout(myFunction(),1000);
     document.getElementById('cartSum').textContent = cart.allMovies.length;
 
@@ -710,48 +710,45 @@ function addToFav(id){
 
 
   if(favorite.includes(specificSelect)){
-    console.log('already exists');
+    // console.log('already exists');
     setTimeout(myFunction4(),1000);
 
 
 
   } else {
 
-    if(typeof localStorage.favorite == 'undefined'){
+    if(typeof localStorage.favorite === 'undefined'){
       localStorage.favorite = [];
     }
 
     if(typeof localStorage.favorite !== 'undefined'){
 
-    let strFav = localStorage.getItem('favorite') || JSON.stringify([]);
-    let objFav = JSON.parse(strFav);
-    favorite = objFav;
-   
-    console.log('fav :: ' + localStorage.favorite);
+      let strFav = localStorage.getItem('favorite') || JSON.stringify([]);
+      let objFav = JSON.parse(strFav);
+      favorite = objFav;
 
-    favorite.push(specificSelect);
+      // console.log('fav :: ' + localStorage.favorite);
 
-    let currentFavorite = JSON.stringify(favorite);
-    localStorage.setItem('favorite', currentFavorite);
+      favorite.push(specificSelect);
 
-    let favBtn = document.querySelectorAll('.fav' + specificSelect);
+      let currentFavorite = JSON.stringify(favorite);
+      localStorage.setItem('favorite', currentFavorite);
 
-    for (let i=0; i<favBtn.length; i++){
-      favBtn[i].className = 'fa fa-heart icon fav' + specificSelect;
+      let favBtn = document.querySelectorAll('.fav' + specificSelect);
+
+      for (let i=0; i<favBtn.length; i++){
+        favBtn[i].className = 'fa fa-heart icon fav' + specificSelect;
+      }
+
+      favBtn.className='fa fa-heart icon fav' + specificSelect;
+      document.getElementById('favtSum').textContent = objFav.length;
+
+
+
+      setTimeout(myFunction3(),1000);
+
     }
-
-    favBtn.className='fa fa-heart icon fav' + specificSelect;
-    document.getElementById('favtSum').textContent = objFav.length;
-
-
-
-    setTimeout(myFunction3(),1000);
-
-  } else {
   }
-}
-
-
 
 }
 
@@ -784,7 +781,7 @@ function wait2()
 {
   document.getElementById('myDialog2').close();
 }
-console.log(cart);
+// console.log(cart);
 
 
 function wait3()
