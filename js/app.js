@@ -156,7 +156,7 @@ function genRandom(min, max) {
 
 // Append to Slider Image
 
-if(page == 'index.html'){
+if(page == 'index.html' || page.length == 0){
   function sliderFn(){
 
     let sliderWrapper = document.getElementsByClassName('swiper-wrapper')[0];
@@ -198,12 +198,20 @@ if(page == 'index.html'){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn-slider';
-if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
-        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+
+      if(typeof localStorage.favorite !== 'undefined'){
+        if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+          movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+        } else {
+          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+  
+        }  
       } else {
         movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-
-      }      movieData.appendChild(movieAddToFav);
+      }
+          
+      
+      movieData.appendChild(movieAddToFav);
 
       movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
 
@@ -328,13 +336,20 @@ if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn';
+      
 
-      if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
-        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+      if(typeof localStorage.favorite !== 'undefined'){
+        if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+          movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+        } else {
+          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+  
+        }
       } else {
         movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
-
       }
+
+      
       movieCol.appendChild(movieAddToFav);
 
 
@@ -422,15 +437,18 @@ if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn';
-      if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
-        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+
+      if(typeof localStorage.favorite !== 'undefined'){
+        if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+          movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+        } else {
+          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+        }   
       } else {
         movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+      }
 
-      }      movieData.appendChild(movieAddToFav);
-
-
-
+      movieData.appendChild(movieAddToFav);
       movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
 
       movieAddToFav.setAttribute('onclick','addToFav(' + moviesArray[randomNumber].id + ')');
@@ -520,12 +538,20 @@ if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
       //Add to Fav
       let movieAddToFav = document.createElement('button');
       movieAddToFav.className = 'addtofavbtn';
-      if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
-        movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+      
+      if(typeof localStorage.favorite !== 'undefined'){
+        if(localStorage.favorite.includes(moviesArray[randomNumber].id)){
+          movieAddToFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[randomNumber].id + '"></i>';
+        } else {
+          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+  
+        }
       } else {
-        movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
+          movieAddToFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[randomNumber].id + '"></i>';
 
       }
+
+     
       movieData.appendChild(movieAddToFav);
 
       movieAddToCart.setAttribute('onclick','addToCart(' + moviesArray[randomNumber].id + ')');
@@ -763,7 +789,7 @@ function wait4()
   document.getElementById('myDialog4').close();
 }
 
-if(page == 'index.html'){
+if(page == 'index.html' || page.length == 0){
 
   /* swiper start */
   let swiper = new Swiper( '.swiper-container.two', {
