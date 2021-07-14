@@ -48,6 +48,12 @@ function renderMovie(objId){
   movieImg.setAttribute('id', 'filmImg');
   imgDiv.appendChild(movieImg);
 
+  let mainEl = document.getElementById('main');
+  mainEl.style.minHeight = "100%";
+  mainEl.style.backgroundImage = "url('" + moviesArray[specificSelect].img + "')";
+  mainEl.style.backgroundSize = "cover";
+  mainEl.style.boxShadow = "rgb(44 46 67 / 80%) 0px 0px 0px 2000px inset";
+
   let descriptionDiv = document.createElement('div');
   descriptionDiv.setAttribute('id', 'filmDescriptionDiv');
   filmDivEl.appendChild(descriptionDiv);
