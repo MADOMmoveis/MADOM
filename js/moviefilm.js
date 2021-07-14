@@ -49,10 +49,10 @@ function renderMovie(objId){
   imgDiv.appendChild(movieImg);
 
   let mainEl = document.getElementById('main');
-  mainEl.style.minHeight = '100%';
-  mainEl.style.backgroundImage = 'url(\'' + moviesArray[specificSelect].img + '\')';
-  mainEl.style.backgroundSize = 'cover';
-  mainEl.style.boxShadow = 'rgb(44 46 67 / 80%) 0px 0px 0px 2000px inset';
+  mainEl.style.minHeight = "100%";
+  mainEl.style.backgroundImage = "url('" + moviesArray[specificSelect].img + "')";
+  mainEl.style.backgroundSize = "cover";
+  mainEl.style.boxShadow = "rgb(44 46 67 / 80%) 0px 0px 0px 2000px inset";
 
   let descriptionDiv = document.createElement('div');
   descriptionDiv.setAttribute('id', 'filmDescriptionDiv');
@@ -73,21 +73,21 @@ function renderMovie(objId){
   cartDiv.appendChild(moviePrice);
 
   let h2 = document.createElement('h2');
-  h2.innerHTML = 'Movie Trailer <i class=\'fa fa-film\'></i>';
-  h2.className ='trailerH2';
+  h2.innerHTML = "Movie Trailer <i class='fa fa-film'></i>";
+  h2.className ="trailerH2";
   filmDivEl.appendChild(h2);
-
+  
   // ADD TRAILERS AND PRICE
   let trailerDiv = document.createElement('div');
   trailerDiv.setAttribute('id', 'filmTrailerDiv');
   filmDivEl.appendChild(trailerDiv);
 
-
+  
 
 
   trailerDiv.innerHTML = '<iframe width="50%" height="500" src="' + moviesArray[specificSelect].trailer + '" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
-
+   
   // movieTrailer.setAttribute('id', 'movieTrailer');;
   // movieTrailer.setAttribute('controls');
 
@@ -97,7 +97,7 @@ function renderMovie(objId){
   // movieSource.setAttribute('type', '')
   // trailerDiv.appendChild(movieTrailer);
 
-
+  
 
 
   let movieAddToCart = document.createElement('button');
@@ -112,15 +112,7 @@ function renderMovie(objId){
   let movieFav = document.createElement('button');
   movieFav.className = 'addtofavbtn';
   movieFav.setAttribute('id', 'divAddToFavBtn');
-
-  if(typeof localStorage.favorite !== 'undefined'){
-    if(localStorage.favorite.includes(moviesArray[specificSelect].id)){
-      movieFav.innerHTML = '<i class="fa fa-heart icon fav' + moviesArray[specificSelect].id + '"></i>';
-    } else {
-      movieFav.innerHTML = '<i class="fa fa-heart-o icon fav' + moviesArray[specificSelect].id + '"></i>';
-    }
-  }
-
+  movieFav.innerHTML = '<i class="fas fa-heart icon"></i>';
   cartDiv.appendChild(movieFav);
 
   movieFav.setAttribute('onclick','addToFav(' + moviesArray[specificSelect].id + ')');
