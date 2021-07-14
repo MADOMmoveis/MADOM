@@ -342,13 +342,13 @@ input:invalid {
 
   .col-25 {
     float: left;
-    width: 25%;
+    width: 18%;
     margin-top: 6px;
   }
   
   .col-75 {
     float: left;
-    width: 75%;
+    width: 82%;
     margin-top: 6px;
   }
   
@@ -1385,6 +1385,11 @@ button.swiper-pagination-bullet {
 .movietitle, .movieType, .movieRating{
     margin-left: 10px;
     margin-top:5px;
+    color: var(--main);
+}
+
+.movietitle:hover{
+    color: #75002f;
 }
 
 .movieType, .movieRating{
@@ -1415,6 +1420,20 @@ button.swiper-pagination-bullet {
 }
 
 span#cartSum{
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    font-size: 12px;
+    background: var(--main);
+    color: #fff;
+    padding: 2px 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+
+span#favtSum{
     padding-left: 9px;
     padding-right: 9px;
     -webkit-border-radius: 9px;
@@ -1484,3 +1503,82 @@ footer{
     
 }
 
+.favLi{
+    padding : 10px 0 10px 0;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+.removefav{
+    background: none;
+    border: none;
+    color: rgb(151, 0, 0);
+    float: right;
+    cursor: pointer;
+}
+
+.closeFav {
+    margin-top: 10px;
+    border: 1px solid #b40202;
+    background: #b40202;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* .moviePrice{
+    position: absolute;
+    left: 230px;
+    top: 4%;
+    float :right;
+    white-space:nowrap;
+    position:relative;
+    margin:0 5px 0 10px;
+    displaY:inline-block;
+    height:25px;
+    border-radius: 0 5px 5px 0;
+    padding: 0 25px 0 15px;
+    background: var(--primary);
+    border: 0 solid #C7D2D4;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    color:#fff;
+    line-height:23px;
+}
+
+
+}
+*/
+
+.moviePrice{
+    position:absolute;
+    top: 4%;
+    right: 14%;
+    white-space:nowrap;
+    margin:0 5px 0 10px;
+    height:25px;
+    border-radius: 0 5px 5px 0;
+    padding: 0 25px 0 15px;
+    background: #eee;
+    border: 0 solid #7e7e7e;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    color:var(--main);
+    line-height:23px;
+}
+
+.moviePrice:before{
+    position:absolute;
+    content:"\25CF";
+    color:var(--primary);
+    text-shadow: 0 0 1px #333;
+    font-size:11px;
+    line-height:0px;
+    text-indent:12px;
+    left:-15px;
+    width: 1px;
+    height:0px;
+    border-right:14px solid #eee;
+    border-top:  13px solid transparent;
+    border-bottom:  13px solid transparent;
+}
