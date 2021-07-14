@@ -30,12 +30,12 @@ function renderMovie(objId){
   titleDiv.appendChild(movieTitle);
 
   let movieGnere = document.createElement('h4');
-  movieGnere.textContent = 'Type: ' + moviesArray[specificSelect].genre;
+  movieGnere.innerHTML = 'Type: ' + moviesArray[specificSelect].genre + ' <i style="color: var(--main);" class="fa fa-bookmark-o"></i>';
   movieGnere.setAttribute('id', 'filmGenre');
   titleDiv.appendChild(movieGnere);
 
   let movieRating = document.createElement('h4');
-  movieRating.textContent = 'Rating: ' + moviesArray[specificSelect].rating;
+  movieRating.innerHTML = 'Rating: ' + moviesArray[specificSelect].rating + ' <i style="color: #FFBF00;" class="fa fa-star"></i>';
   movieRating.setAttribute('id', 'filmRating');
   titleDiv.appendChild(movieRating);
 
